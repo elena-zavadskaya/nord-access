@@ -167,4 +167,4 @@ export default {
 };
 </script>
 
-<style src="@/assets/comparisonGame.css"></style>
+<style src="../assets/comparisonGame.css"></style>

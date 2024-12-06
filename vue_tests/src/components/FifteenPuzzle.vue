@@ -137,4 +137,4 @@ methods: {
   },
 };
 </script>
-<style src="@/assets/fifteenPuzzle.css"></style>
+<style src="../assets/fifteenPuzzle.css"></style>

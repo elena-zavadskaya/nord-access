@@ -144,4 +144,4 @@ export default {
 };
 </script>
 
-<style src="@/assets/thimblesGame.css"></style>
+<style src="../assets/thimblesGame.css"></style>
