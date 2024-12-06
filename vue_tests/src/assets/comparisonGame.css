@@ -1,0 +1,60 @@
+/* === Область для сравнения === */
+.comparison-container .game-area {
+  display: flex;
+  justify-content: space-around;
+  margin: 20px 0;
+}
+
+.image-container {
+  width: 150px;
+  height: 150px;
+  background: white;
+  border: 2px solid #ccc;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 10px;
+}
+
+.symbol {
+  font-size: 24px;
+  margin: 5px;
+}
+
+/* === Кнопки для выбора === */
+.choices {
+  margin: 20px 0;
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}
+
+.choice-button {
+  padding: 10px 20px;
+  font-size: 16px;
+  color: white;
+  background-color: #ff66b2;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.choice-button:hover {
+  background-color: #ff3385;
+}
+
+.message {
+  font-size: 18px;
+  margin-top: 10px;
+  text-align: center;
+}
+
+.correct {
+  color: green;
+}
+
+.incorrect {
+  color: red;
+}

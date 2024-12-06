@@ -1,0 +1,43 @@
+/* === Сетка для костяшек === */
+.fifteen-container .game-board {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* создает 4 колонки, чтобы расположить плитки в виде сетки 4x4 */
+  grid-gap: 10px;
+  margin-top: 20px;
+}
+
+/* === Стили для костяшек === */
+.fifteen-container .tile {
+  background-color: #ecf0f1;
+  color: #2c3e50;
+  font-size: 24px;
+  font-weight: bold;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.2s, transform 0.2s;
+}
+
+.fifteen-container .tile:hover {
+  background-color: #bdc3c7;
+  transform: scale(1.05);
+}
+
+.fifteen-container .tile.empty {
+  background-color: transparent;
+  cursor: default;
+}
+
+.fifteen-container .tile.empty:hover {
+  transform: none;
+}
+
+/* === Информация о ходе === */
+.fifteen-container .info p {
+  font-size: 18px;
+  color: #2c3e50;
+  margin: 5px;
+}
