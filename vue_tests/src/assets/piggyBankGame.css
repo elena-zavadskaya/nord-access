@@ -1,0 +1,44 @@
+/* Область с копилками */
+.piggy-bank-game .game-area {
+  display: flex;
+  justify-content: space-around;
+  margin: 20px 0;
+}
+
+/* Копилки */
+.piggy-bank-game .piggy-bank {
+  width: 150px;
+  height: 200px;
+  background-color: #f3e5ab;
+  border: 3px solid #e1c699;
+  border-radius: 15px;
+  display: flex;
+  flex-wrap: wrap; /* Монеты располагаются на нескольких строках */
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  cursor: pointer;
+}
+
+/* Монеты */
+.piggy-bank-game .coin {
+  width: 40px;
+  height: 40px;
+  background-color: #ffcc00;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 40px;
+  font-weight: bold;
+  margin: 5px;
+}
+
+.piggy-bank-game .feedback {
+  font-size: 18px;
+  font-weight: bold;
+  margin-top: 20px;
+}
+
+.piggy-bank-game .results h3 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}

@@ -1,0 +1,63 @@
+/* === Основной контейнер === */
+.sequence-test-container {
+  text-align: center;
+}
+
+/* === Вопрос === */
+.sequence-test-container .info {
+  margin: 20px 0;
+  font-size: 18px;
+  color: #34495e;
+}
+
+/* === Последовательность === */
+.sequence-test-container .sequence {
+  font-size: 24px;
+  margin: 20px 0;
+  color: #2c3e50;
+}
+
+/* === Ответы === */
+.sequence-test-container .answers {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  align-items: center;
+}
+
+/* === Кнопки ответов === */
+.sequence-test-container .answer-button {
+  padding: 10px 20px;
+  font-size: 18px;
+  font-weight: bold;
+  color: #fff;
+  background-color: #ff6f91;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.sequence-test-container .answer-button:hover {
+  background-color: #ff3e70;
+  transform: scale(1.05);
+}
+
+/* === Правильный ответ === */
+.sequence-test-container .answer-button.correct {
+  background-color: #2ecc71;
+  cursor: not-allowed;
+}
+
+/* === Неправильный ответ === */
+.sequence-test-container .answer-button.incorrect {
+  background-color: #e74c3c;
+  cursor: not-allowed;
+}
+
+/* === Результаты === */
+.sequence-test-container .results {
+  margin-top: 20px;
+  font-size: 20px;
+  color: #2c3e50;
+}

@@ -14,6 +14,8 @@
           <button @click="goToPage('fifteenPuzzle')" class="button">Пятнашки</button>
           <button @click="goToPage('thimblesGame')" class="button">Наперстки</button>
           <button @click="goToPage('comparisonGame')" class="button">Сравнение объектов</button>
+          <button @click="goToPage('sequencesGame')" class="button">Числовые последовательности</button>
+          <button @click="goToPage('piggyBankGame')" class="button">Копилка</button>
         </div>
       </div>
     </template>
@@ -30,6 +32,14 @@
     <template v-if="currentPage === 'comparisonGame'">
       <ComparisonGame @goHome="goToPage('home')" />
     </template>
+
+    <template v-if="currentPage === 'sequencesGame'">
+      <SequencesGame @goHome="goToPage('home')" />
+    </template>
+
+    <template v-if="currentPage === 'piggyBankGame'">
+      <PiggyBankGame @goHome="goToPage('home')" />
+    </template>
   </div>
 </template>
 
@@ -38,6 +48,8 @@
 import FifteenPuzzle from './components/FifteenPuzzle.vue';
 import ThimblesGame from './components/ThimblesGame.vue';
 import ComparisonGame from './components/ComparisonGame.vue';
+import SequencesGame from './components/SequencesGame.vue';
+import PiggyBankGame from './components/PiggyBankGame.vue';
 
 export default {
   // Подключение компонентов для использования в шаблоне
@@ -45,6 +57,8 @@ export default {
     FifteenPuzzle,
     ThimblesGame,
     ComparisonGame,
+    SequencesGame,
+    PiggyBankGame,
   },
   data() {
     return {
