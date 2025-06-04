@@ -1,0 +1,44 @@
+/* src/components/Hero/Hero.module.css */
+
+.hero {
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.content {
+  text-align: center;
+  color: #ffffff;
+  background: rgba(0, 0, 0, 0.5); /* затемняющий слой для читаемости текста */
+  padding: 2rem;
+  border-radius: 8px;
+}
+
+.title {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.subtitle {
+  font-size: 1.25rem;
+  margin-bottom: 2rem;
+}
+
+.downloadLink {
+  display: inline-block;
+}
+
+.downloadBtn {
+  height: 60px;
+  width: auto;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.downloadBtn:hover {
+  transform: scale(1.05);
+}

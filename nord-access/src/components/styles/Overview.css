@@ -1,0 +1,341 @@
+/* ===================================================================
+   0) Сброс отступов и box-sizing
+   =================================================================== */
+.overview,
+.overview * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ===================================================================
+   1) Основная секция Overview: фоновая картинка
+   =================================================================== */
+.overview {
+  position: relative; /* Чтобы все абсолютные элементы позиционировались относительно этой секции */
+  width: 100%;
+  min-height: 100vh;
+  /* Правильный путь к фоновому изображению:
+     из папки src/components/styles/ поднимаемся на два уровня вверх (к src/), затем в assets/overview.png */
+  background: url("../../assets/overview.png") center/cover no-repeat;
+  padding-top: 80px;
+  padding-bottom: 80px;
+  overflow: hidden;
+}
+
+/* ===================================================================
+   2) Заголовок «Все решения в одном месте» слева сверху
+   =================================================================== */
+.overview__main-title {
+  position: absolute;   /* Абсолютное позиционирование относительно .overview */
+  top: 0;               /* Прижат к самому верху секции */
+  left: 30px;           /* Отступ слева 30px */
+  margin: 0;            /* Убираем внешние отступы */
+  padding: 16px 0;      /* Добавляем вертикальные «воздушные» отступы */
+  font-size: clamp(32px, 5vw, 48px);
+  font-weight: 700;
+  color: #ffffff;       /* Белый цвет текста */
+  font-family: "Montserrat", sans-serif;
+  text-align: left;
+  z-index: 2;           /* Поверх фонового изображения */
+}
+
+/* Подчёркиваем слово «программного продукта» голубым */
+.overview__highlight {
+  color: #00c6ff;
+}
+
+/* ===================================================================
+   3) Контейнер для левой (мишки) и правой (модули) колонок
+   =================================================================== */
+.overview__container {
+  max-width: 1200px;
+  margin: 40px auto 0 auto; /* Отступ сверху: 40px, чтобы заголовок не сливался */
+  padding: 0 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  position: relative;
+  z-index: 1;
+  height: calc(100vh - 160px); /* 100vh минус 80px сверху и 80px снизу */
+}
+
+/* ===================================================================
+   4) Левая колонка: мишка с анимацией при появлении
+   =================================================================== */
+.overview__bear-wrapper {
+  flex: 0 0 45%;
+  max-width: 45%;
+  position: relative;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.overview__bear-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.overview__bear-image {
+  display: block;
+  width: 100%;
+  height: auto;
+  transform-origin: bottom center;
+  transition: transform 0.2s ease-out;
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
+}
+
+.overview__bear-shadow {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60%;
+  height: 40px;
+  background: rgba(0, 0, 0, 0.4);
+  filter: blur(12px);
+  border-radius: 50%;
+  z-index: -1;
+}
+
+/* ===================================================================
+   5) Правая колонка: подсветка-круг + карточка с модулями
+   =================================================================== */
+.overview__modules-wrapper {
+  flex: 0 0 50%;
+  max-width: 50%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* 5.1) Круг-подсветка (блюр) позади карточки */
+.overview__highlight-circle {
+  position: absolute;
+  width: 450px;
+  height: 450px;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    rgba(0, 180, 255, 0.25) 0%,
+    rgba(0, 100, 200, 0.1) 70%
+  );
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  filter: blur(20px);
+  z-index: 0;
+}
+
+/* 5.2) Карточка с модулями поверх круга */
+.overview__modules-card {
+  position: relative;
+  background: rgba(0, 10, 30, 0.75);
+  border: 2px solid #0095ff;
+  border-radius: 20px;
+  padding: 40px;
+  backdrop-filter: blur(10px);
+  color: #ffffff;
+  z-index: 1;
+  width: 100%;
+  max-width: 100%;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.overview__modules-title {
+  font-size: clamp(28px, 4vw, 36px);
+  font-weight: 700;
+  margin-bottom: 20px;
+  font-family: "Montserrat", sans-serif;
+}
+
+.overview__modules-list {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 30px;
+}
+
+.overview__modules-list li {
+  font-size: clamp(16px, 2vw, 20px);
+  line-height: 1.5;
+  margin-bottom: 12px;
+  padding-left: 24px;
+  position: relative;
+}
+
+.overview__modules-list li .overview__bullet {
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: #00c6ff;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.overview__pro-section {
+  margin-bottom: 30px;
+}
+
+.overview__pro-title {
+  font-size: clamp(20px, 2.5vw, 24px);
+  font-weight: 600;
+  color: #00c6ff;
+  margin-bottom: 15px;
+}
+
+.overview__pro-list {
+  list-style: none;
+  padding: 0;
+}
+
+.overview__pro-list li {
+  font-size: clamp(16px, 2vw, 20px);
+  line-height: 1.5;
+  margin-bottom: 10px;
+  padding-left: 24px;
+  position: relative;
+}
+
+.overview__pro-list li .overview__bullet {
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: #00c6ff;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.overview__divider {
+  height: 2px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(0, 198, 255, 0.7) 50%,
+    transparent 100%
+  );
+  margin: 0 auto 20px;
+  width: 80%;
+}
+
+.overview__modules-desc {
+  font-size: clamp(16px, 2vw, 18px);
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.9);
+  text-align: center;
+}
+
+/* ===================================================================
+   6) (Удален раздел навигационных стрелок — лишний код удалён)
+   =================================================================== */
+
+/* ===================================================================
+   7) Адаптивность
+   =================================================================== */
+/* ≤ 992px */
+@media (max-width: 992px) {
+  .overview__container {
+    flex-direction: column;
+    height: auto;
+    padding-top: 80px;
+    padding-bottom: 80px;
+  }
+
+  .overview__bear-wrapper,
+  .overview__modules-wrapper {
+    flex: 0 0 100%;
+    max-width: 100%;
+    text-align: center;
+  }
+
+  .overview__highlight-circle {
+    width: 300px;
+    height: 300px;
+  }
+}
+
+/* ≤ 768px */
+@media (max-width: 768px) {
+  .overview {
+    padding-top: 60px;
+    padding-bottom: 60px;
+    min-height: 85vh;
+  }
+
+  .overview__main-title {
+    font-size: clamp(24px, 5vw, 32px);
+    left: 20px; /* уменьшили отступ слева на планшетах */
+  }
+
+  .overview__bear-wrapper {
+    width: 80%;
+    margin: 0 auto 40px;
+  }
+
+  .overview__modules-card {
+    padding: 30px;
+  }
+
+  .overview__modules-title {
+    font-size: clamp(24px, 4vw, 32px);
+  }
+
+  .overview__modules-list li,
+  .overview__pro-list li {
+    font-size: clamp(14px, 2.5vw, 18px);
+  }
+
+  .overview__divider {
+    width: 90%;
+  }
+
+  .overview__modules-desc {
+    font-size: clamp(14px, 2.5vw, 16px);
+  }
+}
+
+/* ≤ 480px */
+@media (max-width: 480px) {
+  .overview {
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+
+  .overview__main-title {
+    font-size: clamp(20px, 6vw, 28px);
+    left: 16px; /* ещё меньше отступ слева на мобильных */
+  }
+
+  .overview__bear-wrapper {
+    width: 100%;
+  }
+
+  .overview__bear-image {
+    max-width: 80%;
+    margin: 0 auto;
+  }
+
+  .overview__modules-card {
+    padding: 20px;
+  }
+
+  .overview__modules-title {
+    font-size: clamp(20px, 5vw, 28px);
+  }
+
+  .overview__modules-list li,
+  .overview__pro-list li {
+    font-size: clamp(14px, 3vw, 16px);
+    padding-left: 20px;
+  }
+
+  .overview__divider {
+    margin: 0 auto 15px;
+  }
+
+  .overview__modules-desc {
+    font-size: clamp(14px, 3vw, 16px);
+  }
+}

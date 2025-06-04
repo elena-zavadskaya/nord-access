@@ -1,0 +1,22 @@
+/* src/components/AboutSection/AboutSection.module.css */
+
+.aboutSection {
+  padding: 4rem 0;
+  background: rgba(0, 0, 0, 0.4);
+}
+
+.title {
+  font-size: 2rem;
+  color: #00c1ff;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.textWrapper {
+  max-width: 800px;
+  margin: 0 auto;
+  font-size: 1rem;
+  color: #d0eaff;
+  line-height: 1.6;
+  text-align: left;
+}

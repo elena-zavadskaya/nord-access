@@ -1,0 +1,31 @@
+/* index.css */
+html, body, #root {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background: url('./assets/images/background-full.png') no-repeat center top;
+  background-size: cover; /* или «contain», по необходимости */
+  color: #fff; /* большинство текста — белого/светлого цвета */
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Можно сразу задать глобальные утилиты, например: */
+.container {
+  width: 1200px;
+  max-width: 90%;
+  margin: 0 auto;
+}

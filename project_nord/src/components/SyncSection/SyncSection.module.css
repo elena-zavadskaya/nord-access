@@ -1,0 +1,102 @@
+/* src/components/SyncSection/SyncSection.module.css */
+
+.syncSection {
+  padding: 4rem 0;
+  background: rgba(0, 0, 0, 0.6);
+}
+
+.innerWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.left {
+  flex: 1;
+  color: #e0f7ff;
+}
+
+.subtitle {
+  font-size: 1.6rem;
+  color: #00c1ff;
+  margin-bottom: 1rem;
+}
+
+.syncList {
+  margin-bottom: 2rem;
+}
+
+.syncList li {
+  font-size: 1rem;
+  margin-bottom: 0.6rem;
+  position: relative;
+  padding-left: 1.2rem;
+}
+
+.syncList li::before {
+  content: '►'; /* небольшая стрелка, можно поменять на иконку */
+  position: absolute;
+  left: 0;
+  color: #00c1ff;
+  font-size: 1rem;
+  top: 0;
+}
+
+.downloadWrapper p {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  max-width: 400px;
+  line-height: 1.5;
+}
+
+.googleBadge {
+  width: 180px;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.googleBadge:hover {
+  transform: scale(1.05);
+}
+
+.right {
+  flex: 1.2;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* «desktopImg» — шире, на фоне, а «mobileImg» — фронтальный телефон */
+.desktopImg {
+  max-width: 80%;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+}
+
+.mobileImg {
+  position: absolute;
+  bottom: -20px;
+  right: -30px;
+  width: 180px; /* подогнать под макет */
+  transform: rotate(-10deg); /* небольшое наклонение, если есть в макете */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+  .innerWrapper {
+    flex-direction: column;
+    text-align: center;
+  }
+  .right {
+    margin-top: 2rem;
+  }
+  .mobileImg {
+    position: static;
+    transform: none;
+    width: 200px;
+    margin-top: 1rem;
+  }
+}

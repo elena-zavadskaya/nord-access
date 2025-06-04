@@ -1,0 +1,29 @@
+/* src/components/ModulesList/ModulesList.module.css */
+
+.modulesWrapper {
+  background-color: #333333;
+  padding: 2rem 1rem;
+}
+
+.modulesList {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.moduleItem {
+  color: #ffffff;
+  background-color: #444444;
+  padding: 0.75rem 1.25rem;
+  border-radius: 4px;
+  font-size: 0.95rem;
+  transition: background-color 0.2s;
+}
+
+.moduleItem:hover {
+  background-color: #555555;
+}

@@ -1,0 +1,75 @@
+/* src/components/ModulesSection/ModulesSection.module.css */
+
+.modulesSection {
+  padding: 4rem 0;
+  background: rgba(0, 0, 0, 0.4); /* попытка «отделить» секцию от фона */
+  border-radius: 8px;
+  margin: 2rem auto;
+}
+
+.inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.left {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.bearImg {
+  max-width: 100%;
+  height: auto;
+  /* Можно подогнать высоту, чтобы мишка был пропорционален макету */
+}
+
+.right {
+  flex: 1.2;
+}
+
+.card {
+  background: rgba(0, 20, 40, 0.6);
+  border-radius: 8px;
+  padding: 2rem;
+  position: relative;
+}
+
+.cardTitle {
+  font-size: 1.6rem;
+  color: #00c1ff;
+  margin-bottom: 1rem;
+}
+
+.moduleList {
+  font-size: 1rem;
+  color: #e0f7ff;
+  margin-bottom: 1.5rem;
+  line-height: 1.7;
+}
+
+.proVersion {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  padding: 0.8rem 1rem;
+  background: rgba(0, 193, 255, 0.2);
+  border-left: 4px solid #00c1ff;
+}
+
+.proTitle {
+  font-weight: 600;
+  color: #00c1ff;
+}
+
+.proItem {
+  color: #ffffff;
+  margin-top: 0.3rem;
+}
+
+.description {
+  font-size: 0.9rem;
+  color: #c0eaff;
+  margin-top: 1rem;
+}

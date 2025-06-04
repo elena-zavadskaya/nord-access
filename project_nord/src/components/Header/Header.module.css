@@ -1,0 +1,52 @@
+/* Header.module.css */
+
+.header {
+  position: fixed; /* Чтобы шапка всегда была сверху */
+  top: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.6); /* полупрозрачный фон */
+  backdrop-filter: blur(6px);
+  z-index: 1000;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logoWrapper img {
+  height: 40px; /* регулируете по макету */
+}
+
+.navList {
+  display: flex;
+  gap: 1.8rem;
+}
+
+.navItem a {
+  color: #ffffff;
+  font-size: 1rem;
+  transition: color 0.2s;
+}
+
+.navItem a:hover {
+  color: #00c1ff; /* цвет при наведении */
+}
+
+.loginButton {
+  background-color: #00c1ff;
+  color: #fff;
+  padding: 0.6rem 1rem;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  transition: background-color 0.2s;
+}
+
+.loginButton:hover {
+  background-color: #009fcc;
+}

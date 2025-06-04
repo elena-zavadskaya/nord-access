@@ -1,0 +1,139 @@
+/* ============================================================
+   Стили для одного блока «Планшет + описание»
+   (переиспользуемый компонент FeatureBlock.jsx)
+   ============================================================ */
+
+.feature-block,
+.feature-block * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Заголовок блока «табличка» */
+.feature-title {
+  display: inline-block;
+  background: rgba(0, 0, 0, 0.6);
+  border: 1px solid #00c6ff;
+  border-radius: 20px;
+  padding: 8px 20px;
+  font-size: clamp(24px, 4vw, 32px);
+  font-weight: 700;
+  color: #ffffff;
+  font-family: "Montserrat", sans-serif;
+  margin-bottom: 30px;
+}
+
+/* Общий контейнер внутри блока: flex-раскладка «картинка + текст» */
+.feature-block {
+  margin-bottom: 100px;
+  perspective: 1000px; /* 3D-эффект у картинок */
+}
+
+/* Если reverse=true, переворачиваем направление флекса */
+.feature-block--reverse .feature-content {
+  flex-direction: row-reverse;
+}
+
+.feature-content {
+  display: flex;
+  align-items: center;
+  gap: 60px;
+  flex-wrap: wrap;
+  transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Обёртка для картинки */
+.feature-image-wrapper {
+  flex: 0 0 50%;
+  max-width: 50%;
+  transform-style: preserve-3d;
+}
+
+.feature-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 20px;
+  box-shadow:
+    0 20px 40px rgba(0, 0, 0, 0.4),
+    0 0 0 1px rgba(0, 198, 255, 0.3);
+  transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  transform: rotateY(-5deg) rotateX(5deg);
+}
+
+.feature-image:hover {
+  transform: rotateY(0) rotateX(0) scale(1.03);
+  box-shadow:
+    0 30px 60px rgba(0, 198, 255, 0.2),
+    0 0 0 2px rgba(0, 198, 255, 0.5);
+}
+
+/* Текстовая часть (список или параграф) */
+.feature-text-list {
+  flex: 0 0 45%;
+  max-width: 45%;
+}
+
+.feature-text-list ul {
+  list-style: none;
+}
+
+.feature-text-list ul li {
+  font-size: clamp(18px, 2.5vw, 22px);
+  color: #e0e8f0;
+  line-height: 1.8;
+  margin-bottom: 20px;
+  position: relative;
+  padding-left: 40px;
+  font-weight: 300;
+}
+
+.feature-text-list ul li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 12px;
+  width: 20px;
+  height: 2px;
+  background: linear-gradient(
+    90deg,
+    #00c6ff 0%,
+    #0072ff 100%
+  );
+}
+
+.feature-text-list p {
+  font-size: clamp(18px, 2.5vw, 22px);
+  color: #e0e8f0;
+  line-height: 1.8;
+  font-weight: 300;
+}
+
+/* Адаптивность для планшетов и телефонов */
+@media (max-width: 992px) {
+  .feature-content {
+    flex-direction: column;
+  }
+  .feature-image-wrapper,
+  .feature-text-list {
+    flex: 0 0 100%;
+    max-width: 100%;
+    text-align: center;
+  }
+  .feature-image {
+    max-width: 80%;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 576px) {
+  .feature-text-list ul li {
+    padding-left: 30px;
+    margin-bottom: 15px;
+  }
+  .feature-text-list ul li::before {
+    width: 15px;
+    top: 10px;
+  }
+}
