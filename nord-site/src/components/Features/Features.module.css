@@ -1,9 +1,0 @@
-/* src/components/Features/Features.module.css */
-
-.featuresContainer {
-  display: flex;
-  flex-direction: column;
-  gap: 4rem;            /* расстояние между секциями */
-  padding: 2rem 1rem;   /* вертикальные отступы, можно изменить по вкусу */
-  background-color: #f9f9f9; /* при желании фоновый цвет всей секции */
-}
