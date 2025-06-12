@@ -29,7 +29,7 @@
   left: 25.5%;
   margin: 0;
   padding: 16px 0;
-  font-size: clamp(32px, 5vw, 48px);
+  font-size: 24px;
   font-weight: 700;
   color: #ffffff;
   font-family: "Montserrat", sans-serif;
@@ -38,7 +38,7 @@
 }
 
 .overview__highlight {
-  color: #00c6ff;
+  color: #5de0e6;
 }
 
 /* ===================================================================
@@ -186,7 +186,7 @@
 .overview__pro-title {
   font-size: clamp(20px, 2.5vw, 24px);
   font-weight: 600;
-  color: #00c6ff;
+  color: #5de0e6;
   margin-bottom: 15px;
 }
 
