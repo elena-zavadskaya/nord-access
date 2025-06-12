@@ -7,7 +7,6 @@ import FeaturesSection from "./components/FeaturesSection";
 import Overview from './components/Overview';
 import AboutUs from './components/AboutUs';
 import SyncSection from './components/SyncSection';
-import Contacts from './components/Contacts';
 import Footer from './components/Footer';
 
 function App() {
@@ -20,7 +19,6 @@ function App() {
         <FeaturesSection />
         <AboutUs />
         <SyncSection />
-        <Contacts />
       </main>
       <Footer />
     </div>
