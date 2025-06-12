@@ -27,7 +27,7 @@
 .overview__main-title {
   position: absolute;
   top: 0;
-  left: 30px;
+  left: 25.5%;
   margin: 0;
   padding: 16px 0;
   font-size: clamp(32px, 5vw, 48px);

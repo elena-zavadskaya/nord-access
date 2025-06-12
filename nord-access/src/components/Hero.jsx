@@ -64,7 +64,7 @@ const Hero = () => {
               <p className="hero__download-subtitle">Скачать приложение</p>
             </div>
             <div className="hero__badge-wrapper">
-              <a href="#" className="hero__badge-link">
+              <a href="https://play.google.com/store/games?hl=ru" className="hero__badge-link">
                 <img
                   src={googlePlayBadge}
                   alt="Скачать из Google Play"
