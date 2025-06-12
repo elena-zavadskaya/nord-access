@@ -1,6 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800&display=swap');
+
 .about {
-  background-color: #ffffff;
+  background-color: #000000;
   padding: 80px 0;
+  font-family: 'Montserrat', sans-serif;
+  color: #ffffff;
 }
 
 .about__inner {
@@ -10,14 +14,44 @@
 }
 
 .about__title {
-  font-size: 32px;
-  margin-bottom: 24px;
-  color: #333333;
+  display: inline-block;
+  border: 3px solid #5de0e6;
+  border-radius: 22px;
+  padding: 36px 5% 18vw; /* Верхний паддинг - 8px, боковые - 5% от ширины контейнера, нижний - 20% от ширины вьюпорта */
+  color: #ffffff;
+  font-size: clamp(24px, 5vw, 45px); /* Минимум 24px, максимум 45px, зависит от ширины экрана */
+  font-weight: 200;
+  margin: 0 auto 24px;
+  text-align: center;
+  background-color: transparent;
+  width: 100%; /* Занимает всю доступную ширину */
+  max-width: 800px; /* Чтобы не растягивалась на очень широких экранах */
+  box-sizing: border-box; /* Учитывает паддинги и границы внутри ширины */
+}
+
+.about__text-wrapper {
+  position: relative;
+  margin: -190px auto 16px;
+  max-width: 600px;
+  border: 2px solid #5de0e6;
+  border-radius: 37px;
+  padding: 20px;
+  text-align: justify;
+  z-index: 2;
+  background-color: black;
 }
 
 .about__text {
   font-size: 16px;
-  color: #555555;
+  color: #ffffff;
   line-height: 1.6;
-  margin-bottom: 16px;
+  font-weight: 400;
+  margin: 0 0 16px 0;
 }
+
+.about__text:last-of-type {
+  margin-bottom: 0;
+}
+
+
+
