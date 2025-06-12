@@ -18,7 +18,7 @@ function App() {
       <main>
         <Hero />
         <Overview />
-          <FeaturesSection />
+        <FeaturesSection />
         <AboutUs />
         <SyncSection />
         <DownloadSection />

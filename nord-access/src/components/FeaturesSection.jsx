@@ -1,27 +1,23 @@
-// src/components/FeaturesSection.jsx
 import React from "react";
 import "./styles/FeaturesSection.css";
-
 import FeatureBlock from "./FeatureBlock";
 
-import tablet1 from "../assets/tablet1.png"; // «Удобство и актуальность»
-import tablet2 from "../assets/tablet2.png"; // «Подробная аналитика»
-import tablet3 from "../assets/tablet3.png"; // «Функциональность»
+import tablet1 from "../assets/tablet1.png";
+import tablet2 from "../assets/tablet2.png";
+import tablet3 from "../assets/tablet3.png";
 
 const videoPlaceholder = "https://www.youtube.com/embed/dQw4w9WgXcQ";
 
 const FeaturesSection = () => {
-  // Данные для трёх блоков можно держать в локальных переменных/константах:
   const blockData = [
-{
-  title: "Удобство и актуальность",
-  imageSrc: tablet1,
-  items:
-    "актуальные цены и объёмы к отгрузке, быстрое оформление заказов, удобное заполнение справочников<br><br>ваши финансы всегда под контролем, реальный остаток денежных средств и минимизация переплат",
-  reverse: false,
-  isList: false,
-}
-,
+    {
+      title: "Удобство и актуальность",
+      imageSrc: tablet1,
+      items:
+        "актуальные цены и объёмы к отгрузке, быстрое оформление заказов, удобное заполнение справочников<br><br>ваши финансы всегда под контролем, реальный остаток денежных средств и минимизация переплат",
+      reverse: false,
+      isList: false,
+    },
     {
       title: "Подробная аналитика",
       imageSrc: tablet2,
@@ -41,17 +37,13 @@ const FeaturesSection = () => {
       items:
         "базовый набор функций и блоков позволяет автоматизировать ежедневные операции в вашем бизнесе и высвободить время на другие задачи",
       reverse: false,
-      isList: false, // здесь не список, а один абзац
+      isList: false,
     },
   ];
 
   return (
     <section id="features" className="features">
-      {/* Накладка поверх фона (необязательно) */}
-      {/*<div className="features__overlay" />*/}
-
       <div className="features__inner">
-        {/* 1. Выводим три блока через map */}
         {blockData.map((block, index) => (
           <FeatureBlock
             key={index}
@@ -63,17 +55,13 @@ const FeaturesSection = () => {
           />
         ))}
 
-        {/* ============================= */}
-        {/* 4) Все для вашей комфортной работы (карточки) */}
-        {/* ============================= */}
         <div className="features__comfort">
           <h2 className="features__comfort-title">
             Все для вашей комфортной работы
           </h2>
           <div className="features__cards">
-            {/* Карточка 1: Скорость */}
-            <div className="features__card">
-              <div className="features__card-icon">✔️</div>
+            <div className="features__card features__card--black">
+              <div className="features__card-icon">✓</div>
               <h3 className="features__card-title">Скорость</h3>
               <p className="features__card-text">
                 быстрый обмен данными между участниками, оптимизированные
@@ -82,9 +70,8 @@ const FeaturesSection = () => {
               </p>
             </div>
 
-            {/* Карточка 2: Настройки */}
-            <div className="features__card">
-              <div className="features__card-icon">✔️</div>
+            <div className="features__card features__card--black">
+              <div className="features__card-icon">✓</div>
               <h3 className="features__card-title">Настройки</h3>
               <p className="features__card-text">
                 гибкие настройки адаптируют сервис под пользователя. Система
@@ -93,9 +80,8 @@ const FeaturesSection = () => {
               </p>
             </div>
 
-            {/* Карточка 3: Техническая поддержка */}
-            <div className="features__card">
-              <div className="features__card-icon">✔️</div>
+            <div className="features__card features__card--black">
+              <div className="features__card-icon">✓</div>
               <h3 className="features__card-title">Техническая поддержка</h3>
               <p className="features__card-text">
                 профессиональная поддержка быстро решит вопросы и поможет
@@ -106,19 +92,19 @@ const FeaturesSection = () => {
           </div>
         </div>
 
-        {/* ============================= */}
-        {/* 5) Как это работает (видео) */}
-        {/* ============================= */}
         <div className="features__demo">
           <h2 className="features__demo-title">Как это работает</h2>
+          <p className="features__demo-subtitle">
+            Узнайте, как пользоваться всеми возможностями приложения и экономить время на рутинных задачах
+          </p>
           <div className="features__video-wrapper">
             <iframe
-              className="features__video"
-              src={videoPlaceholder}
-              title="Видео демонстрация"
-              frameBorder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
+                className="features__video"
+                src={videoPlaceholder}
+                title="Видео демонстрация"
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
             />
           </div>
         </div>
@@ -128,3 +114,4 @@ const FeaturesSection = () => {
 };
 
 export default FeaturesSection;
+

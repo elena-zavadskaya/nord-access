@@ -14,7 +14,6 @@
 .overview {
   position: relative;
   width: 100%;
-  min-height: 100vh;
   background: url("../../assets/overview.png") center/cover no-repeat;
   padding-top: 80px;
   padding-bottom: 80px;

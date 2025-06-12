@@ -1,7 +1,6 @@
-// src/components/FeatureBlock.jsx
 import React from "react";
 import PropTypes from "prop-types";
-import "./styles/FeatureBlock.css"; // стили только для этого компонента
+import "./styles/FeatureBlock.css";
 
 const FeatureBlock = ({ title, imageSrc, items, reverse, isList }) => {
   return (
@@ -34,10 +33,10 @@ FeatureBlock.propTypes = {
   title: PropTypes.string.isRequired,
   imageSrc: PropTypes.string.isRequired,
   items: PropTypes.oneOfType([
-    PropTypes.arrayOf(PropTypes.string), // для списка
-    PropTypes.string,                   // для одиночного параграфа
+    PropTypes.arrayOf(PropTypes.string),
+    PropTypes.string,
   ]).isRequired,
-  reverse: PropTypes.bool, // true → картинка справа
+  reverse: PropTypes.bool,
   isList: PropTypes.bool,
 };
 

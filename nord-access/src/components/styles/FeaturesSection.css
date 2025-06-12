@@ -1,6 +1,4 @@
-/* ============================================================
-   Стили для контейнера и общих элементов раздела «Возможности»
-   ============================================================ */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800&display=swap');
 
 .features,
 .features * {
@@ -9,12 +7,10 @@
   box-sizing: border-box;
 }
 
-/* 1) Основная секция с фоном и параллакс/градиентом */
 .features {
   position: relative;
   width: 100%;
   min-height: 100vh;
-  /* Если нужно фоновое изображение, укажите правильный путь: */
   background:
     linear-gradient(135deg, #0a1c3a 0%, #0e2748 100%),
     url("../../assets/featuresSection-image.png") center/cover no-repeat;
@@ -22,21 +18,6 @@
   padding: 100px 0;
   overflow: hidden;
 }
-
-/* Анимированный градиентный оверлей поверх фона (можно убрать, если не нужен) */
-/*.features__overlay {*/
-/*  position: absolute;*/
-/*  inset: 0;*/
-/*  background: linear-gradient(*/
-/*    45deg,*/
-/*    rgba(10, 28, 58, 0.9) 0%,*/
-/*    rgba(0, 114, 255, 0.15) 50%,*/
-/*    rgba(10, 28, 58, 0.9) 100%*/
-/*  );*/
-/*  z-index: 1;*/
-/*  animation: gradientShift 15s ease infinite;*/
-/*  background-size: 300% 300%;*/
-/*}*/
 
 @keyframes gradientShift {
   0% {
@@ -50,7 +31,6 @@
   }
 }
 
-/* 2) Внутренний контейнер: центрирование, паддинги, z-index */
 .features__inner {
   width: 100%;
   max-width: 1280px;
@@ -59,39 +39,21 @@
   position: relative;
   z-index: 2;
   color: #ffffff;
+  font-family: 'Montserrat', sans-serif;
 }
 
-/* 3) Секция «Все для вашей комфортной работы» */
 .features__comfort {
   margin-bottom: 100px;
   text-align: center;
 }
 
 .features__comfort-title {
+  color: #ffffff;
   font-size: clamp(36px, 6vw, 56px);
-  font-weight: 800;
+  font-weight: 100;
   margin-bottom: 60px;
-  background: linear-gradient(90deg, #ffffff 0%, #00c6ff 100%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-  position: relative;
-}
-
-.features__comfort-title::after {
-  content: "";
-  position: absolute;
-  bottom: -15px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 150px;
-  height: 3px;
-  background: linear-gradient(
-    90deg,
-    transparent 0%,
-    #00c6ff 50%,
-    transparent 100%
-  );
+  margin-top: 60px;
+  text-align: left;
 }
 
 .features__cards {
@@ -102,8 +64,8 @@
 }
 
 .features__card {
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(0, 198, 255, 0.2);
+  background-color: #000;
+  border: 3px solid #00c6ff;
   border-radius: 24px;
   padding: 40px 30px;
   flex: 0 0 30%;
@@ -113,8 +75,6 @@
     0 10px 30px rgba(0, 0, 0, 0.2),
     inset 0 0 15px rgba(0, 198, 255, 0.1);
   transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
-  position: relative;
-  overflow: hidden;
 }
 
 .features__card:hover {
@@ -122,47 +82,38 @@
   box-shadow:
     0 20px 40px rgba(0, 198, 255, 0.3),
     inset 0 0 20px rgba(0, 198, 255, 0.2);
-  border-color: rgba(0, 198, 255, 0.5);
-}
-
-.features__card::before {
-  content: "";
-  position: absolute;
-  top: -50%;
-  left: -50%;
-  width: 200%;
-  height: 200%;
-  background: radial-gradient(
-    circle,
-    rgba(0, 198, 255, 0.1) 0%,
-    rgba(0, 198, 255, 0) 70%
-  );
-  transition: all 0.8s ease;
-  opacity: 0;
-}
-
-.features__card:hover::before {
-  opacity: 1;
-  transform: translate(50%, 50%);
 }
 
 .features__card-icon {
-  font-size: 48px;
-  color: #00c6ff;
-  margin-bottom: 20px;
+  display: inline-flex;
+  width: 40px;
+  height: 40px;
+  min-width: 40px;
+  min-height: 40px;
+  background-color: #00c6ff;
+  border-radius: 50%;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  font-family: Arial, sans-serif;
+  color: #ffffff;
   transition: all 0.3s ease;
+  margin-right: 12px;
 }
 
 .features__card:hover .features__card-icon {
   transform: scale(1.2);
-  text-shadow: 0 0 15px rgba(0, 198, 255, 0.5);
+  box-shadow: 0 0 15px rgba(0, 198, 255, 0.5);
 }
 
+
 .features__card-title {
-  font-size: clamp(24px, 3vw, 32px);
+  display: inline-flex;
+  font-size: 30px;
   font-weight: 700;
   color: #ffffff;
   margin-bottom: 20px;
+  margin-top: 0;
   transition: all 0.3s ease;
 }
 
@@ -173,41 +124,29 @@
 .features__card-text {
   font-size: clamp(16px, 2vw, 20px);
   line-height: 1.8;
-  color: rgba(255, 255, 255, 0.8);
+  color: #ffffff;
   font-weight: 300;
+  text-align: left;
 }
 
-/* 4) Блок «Как это работает» (видео) */
 .features__demo {
   margin-bottom: 80px;
   text-align: center;
 }
 
 .features__demo-title {
+  color: #ffffff;
   font-size: clamp(36px, 6vw, 56px);
-  font-weight: 800;
-  background: linear-gradient(90deg, #ffffff 0%, #00c6ff 100%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-  margin-bottom: 50px;
-  position: relative;
+  font-weight: 100;
+  margin-bottom: 40px;
 }
 
-.features__demo-title::after {
-  content: "";
-  position: absolute;
-  bottom: -15px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 150px;
-  height: 3px;
-  background: linear-gradient(
-    90deg,
-    transparent 0%,
-    #00c6ff 50%,
-    transparent 100%
-  );
+.features__demo-subtitle {
+  color: #ffffff;
+  font-size: clamp(16px, 2vw, 20px);
+  line-height: 1.5;
+  text-align: center;
+  margin-bottom: 40px;
 }
 
 .features__video-wrapper {
@@ -250,70 +189,12 @@
   border: none;
 }
 
-/* 5) Адаптивные правки для всего раздела */
-@media (max-width: 1200px) {
-  .features__cards {
-    gap: 20px;
-  }
-  .features__card {
-    flex: 0 0 48%;
-    max-width: 48%;
-  }
-  .features__video {
-    height: 400px;
-  }
-}
-
 @media (max-width: 992px) {
-  .features {
-    padding: 80px 0;
-  }
-  .features__inner {
-    padding: 0 30px;
-  }
-  .features__cards {
-    flex-direction: column;
-    gap: 30px;
-  }
   .features__card {
     flex: 0 0 100%;
     max-width: 100%;
   }
   .features__video {
-    height: 350px;
-  }
-}
-
-@media (max-width: 768px) {
-  .features {
-    padding: 60px 0;
-  }
-  .features__inner {
-    padding: 0 20px;
-  }
-  .features__comfort-title,
-  .features__demo-title {
-    font-size: clamp(28px, 6vw, 40px);
-    margin-bottom: 30px;
-  }
-  .features__card {
-    padding: 30px 20px;
-  }
-  .features__video {
     height: 300px;
-  }
-}
-
-@media (max-width: 576px) {
-  .features {
-    padding: 40px 0;
-  }
-  .features__comfort-title,
-  .features__demo-title {
-    font-size: clamp(24px, 6vw, 32px);
-    margin-bottom: 20px;
-  }
-  .features__video {
-    height: 200px;
   }
 }
