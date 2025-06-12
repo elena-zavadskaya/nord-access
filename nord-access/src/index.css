@@ -1,9 +1,9 @@
-/* src/index.css */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800&display=swap');
 
 /* Базовые сбросы и настройки */
 :root {
-  --primary-color: #00C6FF;
-  --secondary-color: #0056FF;
+  --primary-color: #5de0e6;
+  --secondary-color: #004aad;
   --dark-bg: #0E1E3C;
   --darker-bg: #07122B;
   --text-color: #FFFFFF;
@@ -19,6 +19,7 @@ p, blockquote, pre, dl, dd, ol, ul,
 figure, hr, fieldset, legend {
   margin: 0;
   padding: 0;
+  font-family: 'Montserrat', sans-serif;
 }
 
 /* Бокс-модель для всех элементов */
@@ -46,7 +47,7 @@ body {
 
 /* Типография */
 h1, h2, h3, h4, h5, h6 {
-  font-weight: 700;
+  font-weight: bold;
   line-height: 1.2;
   margin-bottom: 0.5em;
 }

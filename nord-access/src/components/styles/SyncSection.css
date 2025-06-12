@@ -1,42 +1,69 @@
 .sync {
-  background-color: #f7f9fb;
   padding: 60px 0;
+  color: #ffffff;
 }
 
 .sync__inner {
   max-width: 800px;
   margin: 0 auto;
-  text-align: center;
+  text-align: left;
 }
 
 .sync__title {
-  font-size: 28px;
+  font-size: 30px;
   margin-bottom: 24px;
-  color: #333333;
+  font-weight: 200;
 }
 
 .sync__list {
   list-style: none;
   display: flex;
-  justify-content: center;
-  gap: 40px;
-  margin: 0;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 12px;
   padding: 0;
+  margin: 0 0 24px 0;
+  font-size: 20px;
 }
 
 .sync__item {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 8px;
+  position: relative;
+  font-size: 16px;
+  color: #ffffff;
+  padding-left: 20px;
+  text-align: left;
 }
 
-.sync__item img {
-  width: 50px;
-  height: 50px;
+.sync__item::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 0;
+  height: 0;
+  border-top: 5px solid transparent;
+  border-bottom: 5px solid transparent;
+  border-left: 8px solid #06f4e5;
+  border-radius: 2px;
 }
 
 .sync__item span {
   font-size: 16px;
-  color: #555555;
+}
+
+.sync__description {
+  font-size: 17px;
+  line-height: 1.5;
+}
+
+.sync__google-play {
+  display: inline-block;
+  margin-top: 16px;
+}
+
+.sync__google-play img {
+  width: 150px; /* или нужный тебе размер */
+  height: auto;
 }
