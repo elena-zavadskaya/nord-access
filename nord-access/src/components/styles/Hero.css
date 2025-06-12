@@ -81,30 +81,29 @@
   padding: 120px 0 60px;
   text-align: left;
   width: 100%;
-  margin-left: 100px; /* вот этот отступ сдвигает текст вправо */
+  margin-left: 100px;
 }
 
 
 .hero__title {
-  font-size: clamp(32px, 5vw, 64px);
+  font-size: 46px;
   margin-bottom: 20px;
   line-height: 1.2;
   opacity: 0;
   font-weight: 700;
-  font-family: 'Montserrat', sans-serif;
 }
 
 .hero__subtitle {
-  font-size: clamp(18px, 2.5vw, 28px);
+  font-size: 20px;
   margin-bottom: 30px;
   opacity: 0;
 }
 
 .hero__description {
-  font-size: clamp(16px, 2vw, 20px);
+  font-size: 20px;
   margin-bottom: 40px;
   max-width: 800px;
-  color: #00c6ff;
+  color: #00d1ff;
   opacity: 0;
 }
 
@@ -124,21 +123,21 @@
 }
 
 .hero__download-title {
-  font-size: clamp(24px, 3vw, 40px);
-  margin-bottom: 10px;
+  font-size: 24px;
   font-weight: 700;
   font-family: 'Montserrat', sans-serif;
 }
 
 .hero__download-subtitle {
-  font-size: clamp(16px, 2vw, 20px);
+  font-size: 21px;
   opacity: 0.8;
+  color: #ffffff;
 }
 
 .hero__badge-wrapper {
   position: absolute;
   top: 50%;
-  right: 40px; /* бейдж будет на 40px от правого края */
+  right: 40px;
   transform: translateY(-50%);
   z-index: 2;
 }
@@ -159,16 +158,16 @@
    =================================================================== */
 .hero__scroll-button {
   position: absolute;
-  top: 50%;                   /* по центру по вертикали */
-  right: 40px;                /* 40px от правого края */
-  bottom: auto;               /* отключаем bottom */
-  left: auto;                 /* отключаем left */
-  transform: translateY(-50%);/* центрируем по высоте */
+  top: 50%;
+  right: 40px;
+  bottom: auto;
+  left: auto;
+  transform: translateY(-50%);
   width: 50px;
   height: 50px;
   border-radius: 50%;
   background: rgba(0, 100, 200, 0.3);
-  border: 2px solid #00c6ff;
+  border: 2px solid #ffffff;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -198,8 +197,8 @@
   bottom: 20px;
   left: 25.5%;
   width: 100%;
-  font-size: 40px;            /* здесь меняем размер текста! */
-  font-weight: 700;
+  font-size: 46px;
+  font-weight: 200;
   font-family: 'Montserrat', sans-serif;
   color: #ffffff;
   opacity: 0;
@@ -246,9 +245,9 @@
     width: 36px;
     height: 36px;
     bottom: 20px;
-    top: auto;           /* прижмём к низу на планшетах */
+    top: auto;
     right: 20px;
-    transform: none;      /* чтобы не «убегала» вверх */
+    transform: none;
   }
   .hero__scroll-icon {
     width: 18px;
