@@ -109,6 +109,14 @@
   line-height: 1.8;
   font-weight: 300;
 }
+.feature-text-paragraphs {
+  font-size: clamp(18px, 2.5vw, 22px);
+  color: #e0e8f0;
+  line-height: 1.8;
+  font-weight: 300;
+  text-align: left;
+}
+
 
 /* Адаптивность для планшетов и телефонов */
 @media (max-width: 992px) {

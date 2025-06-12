@@ -13,16 +13,15 @@ const videoPlaceholder = "https://www.youtube.com/embed/dQw4w9WgXcQ";
 const FeaturesSection = () => {
   // Данные для трёх блоков можно держать в локальных переменных/константах:
   const blockData = [
-    {
-      title: "Удобство и актуальность",
-      imageSrc: tablet1,
-      items: [
-        "актуальные цены и объёмы к отгрузке, быстрое оформление заказов, удобное заполнение справочников",
-        "ваши финансы всегда под контролем, реальный остаток денежных средств и минимизация переплат",
-      ],
-      reverse: false,
-      isList: true,
-    },
+{
+  title: "Удобство и актуальность",
+  imageSrc: tablet1,
+  items:
+    "актуальные цены и объёмы к отгрузке, быстрое оформление заказов, удобное заполнение справочников<br><br>ваши финансы всегда под контролем, реальный остаток денежных средств и минимизация переплат",
+  reverse: false,
+  isList: false,
+}
+,
     {
       title: "Подробная аналитика",
       imageSrc: tablet2,
@@ -49,7 +48,7 @@ const FeaturesSection = () => {
   return (
     <section id="features" className="features">
       {/* Накладка поверх фона (необязательно) */}
-      <div className="features__overlay" />
+      {/*<div className="features__overlay" />*/}
 
       <div className="features__inner">
         {/* 1. Выводим три блока через map */}

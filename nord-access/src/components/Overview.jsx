@@ -1,7 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
-/* Правильно импортируем CSS из папки styles */
 import "./styles/Overview.css";
-/* Импортируем картинку-мишку из src/assets/ */
 import bearImage from "../assets/bear.png";
 
 const Overview = () => {
@@ -10,7 +8,6 @@ const Overview = () => {
   const [scrollY, setScrollY] = useState(0);
   const [isScrolling, setIsScrolling] = useState(false);
 
-  // Лёгкое движение мишки при прокрутке
   useEffect(() => {
     let scrollTimeout;
     const handleScroll = () => {
@@ -26,7 +23,6 @@ const Overview = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Fade-in для мишки, когда она появляется в зоне видимости
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
@@ -47,10 +43,8 @@ const Overview = () => {
 
   return (
     <section id="overview" className="overview">
-      {/* Заголовок */}
       <h2 className="overview__main-title">Возможности программного продукта</h2>
 
-      {/* Основной контейнер с двумя колонками */}
       <div className="overview__container">
         {/* Левая колонка: мишка */}
         <div
@@ -72,12 +66,9 @@ const Overview = () => {
           <div className="overview__bear-shadow"></div>
         </div>
 
-        {/* Правая колонка: подсветка (круг) + карточка */}
+        {/* Правая колонка: два блока с одинаковой стилизацией */}
         <div className="overview__modules-wrapper">
-          {/* Круг-подсветка за карточкой */}
-          <div className="overview__highlight-circle"></div>
-
-          {/* Карточка с модулями */}
+          {/* Блок 1: Модули ОНЛАЙН */}
           <div className="overview__modules-card">
             <h3 className="overview__modules-title">
               Модули <span className="overview__highlight">ОНЛАЙН</span>
@@ -115,13 +106,16 @@ const Overview = () => {
                 </li>
               </ul>
             </div>
+          </div>
 
-            <div className="overview__divider"></div>
-
-            <p className="overview__modules-desc">
-              Наша команда специалистов разработала комплексный набор модулей,
-              с учётом специфики отраслевой торговли нефтепродуктами
-            </p>
+          {/* Блок 2: Описание команды (новая карточка) */}
+          <div className="overview__modules-card overview__team-card">
+            <div className="overview__team-content">
+              <p className="overview__modules-desc">
+                Наша команда специалистов разработала комплексный набор модулей,
+                с учётом специфики отраслевой торговли нефтепродуктами
+              </p>
+            </div>
           </div>
         </div>
       </div>

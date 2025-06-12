@@ -22,7 +22,7 @@ const FeatureBlock = ({ title, imageSrc, items, reverse, isList }) => {
               ))}
             </ul>
           ) : (
-            <p>{items}</p>
+            <div className="feature-text-paragraphs" dangerouslySetInnerHTML={{ __html: items }} />
           )}
         </div>
       </div>
