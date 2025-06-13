@@ -46,7 +46,7 @@ const Hero = () => {
       <div className="hero__overlay" />
 
       <div className="hero__content" ref={heroRef}>
-        <div className="hero__text" style={{ maxWidth: textWidth }}>
+        <div className="hero__text" style={{maxWidth: textWidth}}>
           <h1 className="hero__title">Отраслевое решение АКСЕСС</h1>
           <p className="hero__subtitle">
             Универсальный инструмент для управления закупками и продажами вашего
@@ -66,22 +66,21 @@ const Hero = () => {
             <div className="hero__badge-wrapper">
               <a href="https://play.google.com/store/games?hl=ru" className="hero__badge-link">
                 <img
-                  src={googlePlayBadge}
-                  alt="Скачать из Google Play"
-                  className="hero__badge-image"
+                    src={googlePlayBadge}
+                    alt="Скачать из Google Play"
+                    className="hero__badge-image"
                 />
               </a>
             </div>
           </div>
         </div>
-      </div>
 
-      {/* Одна «стрелка вниз», ведущая к секции Overview */}
-      <a href="#overview" className="hero__scroll-button" aria-label="Вниз">
-        <svg className="hero__scroll-icon" viewBox="0 0 24 24">
-          <path d="M12 19l-7-7 1.41-1.41L12 16.17l5.59-5.58L19 12z" />
-        </svg>
-      </a>
+        <a href="#overview" className="hero__scroll-button" aria-label="Вниз">
+          <svg className="hero__scroll-icon" viewBox="0 0 24 24">
+            <path d="M12 19l-7-7 1.41-1.41L12 16.17l5.59-5.58L19 12z"/>
+          </svg>
+        </a>
+      </div>
 
       {/* Подпись «Все решения в одном месте» в левом нижнем углу Hero */}
       <div className="hero__bottom-left">Все решения в одном месте</div>

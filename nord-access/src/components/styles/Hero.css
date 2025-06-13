@@ -81,7 +81,7 @@
   padding: 120px 0 60px;
   text-align: left;
   width: 100%;
-  margin-left: 100px;
+  margin: 0 auto;
 }
 
 
@@ -155,12 +155,10 @@
 /* ===================================================================
    6) Кнопка «стрелка вниз» справа по центру
    =================================================================== */
-.hero__scroll-button {
+.hero__content .hero__scroll-button {
   position: absolute;
   top: 50%;
   right: 40px;
-  bottom: auto;
-  left: auto;
   transform: translateY(-50%);
   width: 50px;
   height: 50px;
@@ -177,7 +175,7 @@
   opacity: 0;
 }
 
-.hero__scroll-button:hover {
+.hero__content .hero__scroll-button:hover {
   background: rgba(0, 150, 255, 0.5);
   transform: translateY(-50%) scale(1.1);
 }
@@ -227,26 +225,38 @@
 }
 
 @media (max-width: 768px) {
+  .hero__content {
+    padding-bottom: 60px; /* диз. число — подберите под вашу высоту бейджа + отступ */
+  }
+  .hero__text {
+    padding: 80px 20px 30px;
+  }
   .hero__app-download {
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;      /* по центру вместо flex-start */
+    text-align: center;       /* подписи тоже по центру */
+  }
+  .hero__download-text {
+    width: 100%;              /* чтобы text-align:center сработал */
   }
   .hero__badge-wrapper {
     position: static;
     transform: none;
-    margin-top: 20px;
-    align-self: flex-end;
+    margin: 20px auto 0;      /* сверху 20px, по бокам auto, снизу 0 */
   }
   .hero__badge-image {
     height: 50px;
   }
-  .hero__scroll-button {
+  .hero__content .hero__scroll-button {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    top: auto;
+    right: auto;
     width: 36px;
     height: 36px;
-    bottom: 20px;
-    top: auto;
-    right: 20px;
-    transform: none;
+    opacity: 1;
   }
   .hero__scroll-icon {
     width: 18px;
@@ -260,6 +270,9 @@
 }
 
 @media (max-width: 480px) {
+  .hero__content {
+    padding-bottom: 40px; /* чуть меньше на самых маленьких экранах */
+  }
   .hero {
     min-height: 90vh;
   }
@@ -270,11 +283,13 @@
   .hero__badge-image {
     height: 40px;
   }
-  .hero__scroll-button {
+  .hero__badge-wrapper {
+    margin: 16px auto 0;      /* чуть меньше верхнего отступа */
+  }
+  .hero__content .hero__scroll-button {
+    bottom: 16px;
     width: 32px;
     height: 32px;
-    bottom: 16px;
-    right: 16px;
   }
   .hero__scroll-icon {
     width: 16px;

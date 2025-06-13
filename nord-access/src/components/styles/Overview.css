@@ -31,8 +31,6 @@
   padding: 16px 0;
   font-size: 24px;
   font-weight: 700;
-  color: #ffffff;
-  font-family: "Montserrat", sans-serif;
   text-align: left;
   z-index: 2;
 }
@@ -170,14 +168,14 @@
   position: relative;
 }
 
-.overview__modules-list li .overview__bullet {
+/*.overview__modules-list li .overview__bullet {
   position: absolute;
   left: 0;
   top: 0;
   color: #00c6ff;
   font-size: 16px;
   line-height: 1.5;
-}
+}*/
 
 .overview__pro-section {
   margin-bottom: 30px;
@@ -203,13 +201,21 @@
   position: relative;
 }
 
-.overview__pro-list li .overview__bullet {
+/*.overview__pro-list li .overview__bullet {
   position: absolute;
   left: 0;
   top: 0;
   color: #00c6ff;
   font-size: 16px;
   line-height: 1.5;
+}*/
+
+.overview__bullet {
+  display: inline-block;
+  width: 20px;       /* подберите под свой макет */
+  height: auto;
+  margin-right: 16px;
+  vertical-align: middle;
 }
 
 /* 5.4) Стили для содержимого команды */
@@ -279,6 +285,18 @@
   .overview__modules-desc {
     text-align: center;
   }
+
+  .overview__modules-list,
+  .overview__pro-list {
+    text-align: left;
+  }
+
+  .overview__modules-list li,
+  .overview__pro-list li {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+  }
 }
 
 /* ≤ 768px */
@@ -314,6 +332,18 @@
 
   .overview__modules-desc {
     font-size: clamp(14px, 2.5vw, 16px);
+  }
+
+  .overview__modules-list,
+  .overview__pro-list {
+    text-align: left;
+  }
+
+  .overview__modules-list li,
+  .overview__pro-list li {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
   }
 }
 
@@ -354,5 +384,17 @@
 
   .overview__modules-desc {
     font-size: clamp(14px, 3vw, 16px);
+  }
+
+  .overview__modules-list,
+  .overview__pro-list {
+    text-align: left;
+  }
+
+  .overview__modules-list li,
+  .overview__pro-list li {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
   }
 }

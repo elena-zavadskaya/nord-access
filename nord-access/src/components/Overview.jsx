@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import "./styles/Overview.css";
 import bearImage from "../assets/bear.png";
+import arrowIcon from "../assets/arrow.png";
 
 const Overview = () => {
   const bearRef = useRef(null);
@@ -76,23 +77,23 @@ const Overview = () => {
 
             <ul className="overview__modules-list">
               <li>
-                <span className="overview__bullet">▶</span>
+                <img src={arrowIcon} alt="" className="overview__bullet"/>
                 управление закупками
               </li>
               <li>
-                <span className="overview__bullet">▶</span>
+                <img src={arrowIcon} alt="" className="overview__bullet"/>
                 управление уведомлениями
               </li>
               <li>
-                <span className="overview__bullet">▶</span>
+                <img src={arrowIcon} alt="" className="overview__bullet"/>
                 управление финансами
               </li>
               <li>
-                <span className="overview__bullet">▶</span>
+                <img src={arrowIcon} alt="" className="overview__bullet"/>
                 управление логистикой
               </li>
               <li>
-                <span className="overview__bullet">▶</span>
+                <img src={arrowIcon} alt="" className="overview__bullet"/>
                 справочники
               </li>
             </ul>
@@ -101,7 +102,7 @@ const Overview = () => {
               <h4 className="overview__pro-title">Pro версия</h4>
               <ul className="overview__pro-list">
                 <li>
-                  <span className="overview__bullet">▶</span>
+                  <img src={arrowIcon} alt="" className="overview__bullet"/>
                   Аукцион
                 </li>
               </ul>

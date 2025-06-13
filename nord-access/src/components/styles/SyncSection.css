@@ -1,12 +1,46 @@
 .sync {
   padding: 60px 0;
-  color: #ffffff;
 }
 
 .sync__inner {
-  max-width: 800px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1000px;
   margin: 0 auto;
+  padding: 0 20px;
   text-align: left;
+}
+
+/* левая колонка с текстом */
+.sync__content {
+  flex: 1;
+  max-width: 480px;
+}
+
+/* правая колонка с устройствами */
+.sync__images {
+  position: relative; /* добавлено для абсолютного позиционирования телефона */
+  flex: 1;
+  display: flex;
+  justify-content: center; /* центрируем планшет */
+  align-items: center;
+  max-width: 400px;
+}
+
+.sync__tablet {
+  width: 100%;
+  max-width: 250px;
+  transform: scale(2); /* увеличиваем планшет в 2 раза */
+  z-index: 1;
+}
+
+/* телефон расположен справа и чуть перекрывает планшет */
+.sync__phone {
+  position: absolute;
+  right: -70px;
+  bottom: -100px;
+  z-index: 2;
 }
 
 .sync__title {
@@ -27,12 +61,16 @@
   font-size: 20px;
 }
 
-.sync__item {
-  position: relative;
+.overview__item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
   font-size: 16px;
-  color: #ffffff;
-  padding-left: 20px;
-  text-align: left;
+}
+
+.overview__icon {
+  width: 12px;
+  height: 12px;
 }
 
 .sync__item::before {
@@ -64,6 +102,29 @@
 }
 
 .sync__google-play img {
-  width: 150px; /* или нужный тебе размер */
+  width: 150px;
   height: auto;
 }
+
+@media (max-width: 768px) {
+  .sync__inner {
+    flex-direction: column;
+  }
+
+  .sync__images {
+    margin-top: 24px;
+    max-width: 300px;
+  }
+
+  .sync__tablet {
+    transform: scale(1.5);
+  }
+
+  .sync__phone {
+    right: 0;
+    bottom: 0;
+    max-width: 80px;
+    transform: translateX(20%) translateY(10%);
+  }
+}
+

@@ -23,13 +23,30 @@
 
 /* Общий контейнер внутри блока: flex-раскладка «картинка + текст» */
 .feature-block {
+  text-align: right;
   margin-bottom: 100px;
   perspective: 1000px;
+}
+
+.feature-block--reverse {
+  text-align: left;
 }
 
 /* Если reverse=true, переворачиваем направление флекса */
 .feature-block--reverse .feature-content {
   flex-direction: row-reverse;
+}
+
+/* выравниваем title по правому краю, если reverse=false */
+.feature-block .feature-title {
+  display: block;
+  width: 100%;
+  text-align: right;
+}
+
+/* для reverse=true — влево */
+.feature-block--reverse .feature-title {
+  text-align: left;
 }
 
 .feature-content {
