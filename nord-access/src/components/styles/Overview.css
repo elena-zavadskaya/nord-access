@@ -240,13 +240,32 @@
 /* ===================================================================
    6) Адаптивность
    =================================================================== */
-/* ≤ 992px */
-@media (max-width: 992px) {
+
+@media (max-width: 1200px) {
+  .overview {
+    padding-bottom: 0px; /* Уменьшен отступ снизу */
+  }
+
   .overview__container {
     flex-direction: column;
     height: auto;
     padding-top: 80px;
-    padding-bottom: 80px;
+    padding-bottom: 0px;
+  }
+}
+
+/* ≤ 992px */
+@media (max-width: 992px) {
+  .overview {
+    padding-top: 40px; /* Уменьшен отступ сверху */
+    padding-bottom: 0px; /* Уменьшен отступ снизу */
+  }
+
+  .overview__container {
+    flex-direction: column;
+    height: auto;
+    padding-top: 80px;
+    padding-bottom: 0px;
   }
 
   .overview__bear-wrapper,
@@ -303,8 +322,7 @@
 @media (max-width: 768px) {
   .overview {
     padding-top: 60px;
-    padding-bottom: 60px;
-    min-height: 85vh;
+    padding-bottom: 0px;
   }
 
   .overview__main-title {
