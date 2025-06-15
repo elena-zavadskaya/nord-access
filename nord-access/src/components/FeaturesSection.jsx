@@ -5,6 +5,7 @@ import FeatureBlock from "./FeatureBlock";
 import tablet1 from "../assets/tablet1.png";
 import tablet2 from "../assets/tablet2.png";
 import tablet3 from "../assets/tablet3.png";
+import checkmarkIcon from "../assets/checkmark.png";
 
 const videoPlaceholder = "https://www.youtube.com/embed/dQw4w9WgXcQ";
 
@@ -61,8 +62,16 @@ const FeaturesSection = () => {
           </h2>
           <div className="features__cards">
             <div className="features__card features__card--black">
-              <div className="features__card-icon">✓</div>
-              <h3 className="features__card-title">Скорость</h3>
+              <div className="features__card-header">
+                <div className="features__card-icon">
+                  <img
+                      src={checkmarkIcon}
+                      alt="Checkmark"
+                      className="features__checkmark-img"
+                  />
+                </div>
+                <h3 className="features__card-title">Скорость</h3>
+              </div>
               <p className="features__card-text">
                 быстрый обмен данными между участниками, оптимизированные
                 алгоритмы и технологии обеспечивают стабильность и
@@ -71,8 +80,16 @@ const FeaturesSection = () => {
             </div>
 
             <div className="features__card features__card--black">
-              <div className="features__card-icon">✓</div>
-              <h3 className="features__card-title">Настройки</h3>
+              <div className="features__card-header">
+                <div className="features__card-icon">
+                  <img
+                      src={checkmarkIcon}
+                      alt="Checkmark"
+                      className="features__checkmark-img"
+                  />
+                </div>
+                <h3 className="features__card-title">Настройки</h3>
+              </div>
               <p className="features__card-text">
                 гибкие настройки адаптируют сервис под пользователя. Система
                 уведомляет о заказах, ценах, отгрузках, времени — обеспечивая
@@ -81,8 +98,16 @@ const FeaturesSection = () => {
             </div>
 
             <div className="features__card features__card--black">
-              <div className="features__card-icon">✓</div>
-              <h3 className="features__card-title">Техническая поддержка</h3>
+              <div className="features__card-header">
+                <div className="features__card-icon">
+                  <img
+                      src={checkmarkIcon}
+                      alt="Checkmark"
+                      className="features__checkmark-img"
+                  />
+                </div>
+                <h3 className="features__card-title">Техническая поддержка</h3>
+              </div>
               <p className="features__card-text">
                 профессиональная поддержка быстро решит вопросы и поможет
                 настроить систему для максимальной эффективности. чат-бот
