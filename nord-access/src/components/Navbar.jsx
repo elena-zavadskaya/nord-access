@@ -37,8 +37,8 @@ const Navbar = () => {
             {[
               { name: "Главная", href: "#hero" },
               { name: "Обзор", href: "#overview" },
-              { name: "Модули", href: "#modules" },
-              { name: "Возможности", href: "#features" },
+              { name: "Модули", href: "#convenience" },
+              { name: "Возможности", href: "#comfort" },
               { name: "О нас", href: "#about" },
               { name: "Контакты", href: "#contacts" }
             ].map((item) => (

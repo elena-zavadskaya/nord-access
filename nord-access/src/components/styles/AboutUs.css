@@ -11,27 +11,30 @@
   max-width: 800px;
   margin: 0 auto;
   text-align: center;
+  position: relative;
 }
 
 .about__title {
   display: inline-block;
   border: 3px solid #5de0e6;
   border-radius: 22px;
-  padding: 36px 5% 10vw;
+  padding: 36px 20px;
   color: #ffffff;
   font-size: clamp(24px, 5vw, 45px);
   font-weight: 200;
-  margin: 0 auto 24px;
+  margin: 0 auto;
   text-align: center;
   background-color: transparent;
   width: 100%;
   max-width: 800px;
   box-sizing: border-box;
+  /* Добавляем адаптивный нижний отступ */
+  padding-bottom: min(15vw, 120px);
 }
 
 .about__text-wrapper {
   position: relative;
-  margin: -190px auto 16px;
+  margin: -100px auto 16px;
   max-width: 600px;
   border: 2px solid #5de0e6;
   border-radius: 37px;
@@ -51,4 +54,52 @@
 
 .about__text:last-of-type {
   margin-bottom: 0;
+}
+
+/* Медиа-запросы для адаптации */
+@media (max-width: 768px) {
+  .about {
+    padding: 60px 0;
+  }
+
+  .about__title {
+    padding-bottom: 100px;
+  }
+
+  .about__text-wrapper {
+    margin-top: -80px;
+    max-width: 90%;
+  }
+}
+
+@media (max-width: 480px) {
+  .about {
+    padding: 40px 0;
+  }
+
+  .about__title {
+    padding: 25px 15px 80px;
+    border-width: 2px;
+  }
+
+  .about__text-wrapper {
+    margin-top: -60px;
+    padding: 15px;
+    border-width: 1.5px;
+    border-radius: 25px;
+  }
+
+  .about__text {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 360px) {
+  .about__title {
+    padding-bottom: 70px;
+  }
+
+  .about__text-wrapper {
+    margin-top: -50px;
+  }
 }
