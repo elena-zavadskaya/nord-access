@@ -13,13 +13,9 @@
   align-items: flex-start;
 }
 
-.footer__company-info {
-  margin-bottom: 16px;
-  line-height: 1.5;
-}
-
+.footer__company-info,
 .footer__contacts {
-  margin-bottom: 20px;
+  margin-bottom: 16px;
   line-height: 1.5;
 }
 
@@ -54,7 +50,6 @@
   opacity: 0.8;
 }
 
-/* Адаптивность */
 @media (max-width: 768px) {
   .footer__links-row {
     flex-direction: column;

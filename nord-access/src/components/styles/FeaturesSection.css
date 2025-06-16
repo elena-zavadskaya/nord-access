@@ -19,18 +19,6 @@
   overflow: hidden;
 }
 
-@keyframes gradientShift {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
-}
-
 .features__inner {
   width: 100%;
   max-width: 1280px;
@@ -49,8 +37,7 @@
 .features__comfort-title {
   font-size: clamp(36px, 6vw, 56px);
   font-weight: 100;
-  margin-bottom: 60px;
-  margin-top: 60px;
+  margin: 60px 0;
   text-align: left;
 }
 
@@ -69,12 +56,15 @@
   flex: 0 0 30%;
   max-width: 30%;
   backdrop-filter: blur(15px);
-  box-shadow:
-    0 10px 30px rgba(0, 0, 0, 0.2),
-    inset 0 0 15px rgba(0, 198, 255, 0.1);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2), inset 0 0 15px rgba(0, 198, 255, 0.1);
   transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
   display: flex;
   flex-direction: column;
+}
+
+.features__card:hover {
+  transform: translateY(-10px) scale(1.03);
+  box-shadow: 0 20px 40px rgba(0, 198, 255, 0.3), inset 0 0 20px rgba(0, 198, 255, 0.2);
 }
 
 .features__card-header {
@@ -82,13 +72,6 @@
   align-items: center;
   margin-bottom: 20px;
   height: 80px;
-}
-
-.features__card:hover {
-  transform: translateY(-10px) scale(1.03);
-  box-shadow:
-    0 20px 40px rgba(0, 198, 255, 0.3),
-    inset 0 0 20px rgba(0, 198, 255, 0.2);
 }
 
 .features__card-icon {
@@ -113,20 +96,19 @@
   transition: inherit;
 }
 
-.features__card:hover .features__checkmark-img {
+.features__card:hover .features__checkmark-img,
+.features__card:hover .features__card-icon {
   transform: scale(1.2);
 }
 
 .features__card:hover .features__card-icon {
-  transform: scale(1.2);
   box-shadow: 0 0 15px rgba(0, 198, 255, 0.5);
 }
-
 
 .features__card-title {
   font-size: 30px;
   font-weight: 700;
-  margin: 0; /* Убираем отступы */
+  margin: 0;
   transition: all 0.3s ease;
 }
 
@@ -155,7 +137,6 @@
 .features__demo-subtitle {
   font-size: clamp(16px, 2vw, 20px);
   line-height: 1.5;
-  text-align: center;
   margin: 0 auto 40px;
   max-width: 660px;
 }
@@ -167,9 +148,7 @@
   margin: 0 auto;
   border-radius: 20px;
   overflow: hidden;
-  box-shadow:
-    0 20px 50px rgba(0, 198, 255, 0.3),
-    0 0 0 2px rgba(0, 198, 255, 0.3);
+  box-shadow: 0 20px 50px rgba(0, 198, 255, 0.3), 0 0 0 2px rgba(0, 198, 255, 0.3);
   transition: all 0.5s ease;
 }
 
@@ -184,9 +163,7 @@
 }
 
 .features__video-wrapper:hover {
-  box-shadow:
-    0 30px 60px rgba(0, 198, 255, 0.4),
-    0 0 0 4px rgba(0, 198, 255, 0.5);
+  box-shadow: 0 30px 60px rgba(0, 198, 255, 0.4), 0 0 0 4px rgba(0, 198, 255, 0.5);
 }
 
 .features__video-wrapper:hover::before {

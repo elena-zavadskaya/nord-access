@@ -9,16 +9,13 @@
   max-width: 1000px;
   margin: 0 auto;
   padding: 0 20px;
-  text-align: left;
 }
 
-/* левая колонка с текстом */
 .sync__content {
   flex: 1;
   max-width: 480px;
 }
 
-/* правая колонка с устройствами */
 .sync__images {
   position: relative;
   flex: 1;
@@ -35,11 +32,10 @@
   z-index: 1;
 }
 
-/* телефон расположен справа и чуть перекрывает планшет */
 .sync__phone {
   position: absolute;
   right: -70px;
-  bottom: -150px; /* Поднимаем телефон выше */
+  bottom: -150px;
   transform: scale(1.2);
   z-index: 2;
 }
@@ -54,8 +50,6 @@
   list-style: none;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
-  align-items: flex-start;
   gap: 12px;
   padding: 0;
   margin: 0 0 24px 0;
@@ -74,16 +68,15 @@
   height: 12px;
 }
 
-/* Изменения только для текста и кнопки */
 .sync__description {
   font-size: 17px;
   line-height: 1.5;
-  margin-top: 100px; /* Добавляем отступ сверху */
+  margin-top: 100px;
 }
 
 .sync__google-play {
   display: inline-block;
-  margin-top: 20px; /* Увеличиваем отступ сверху */
+  margin-top: 20px;
 }
 
 .sync__google-play img {
@@ -107,12 +100,11 @@
 
   .sync__phone {
     right: 0;
-    bottom: -50px; /* Поднимаем телефон выше */
+    bottom: -50px;
     max-width: 80px;
     transform: translateX(20%) translateY(10%);
   }
 
-  /* Адаптация для мобильных */
   .sync__description {
     margin-top: 30px;
   }

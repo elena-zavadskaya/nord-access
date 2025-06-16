@@ -1,37 +1,24 @@
-/* ===================================================================
-   0) Сброс отступов и box-sizing
-   =================================================================== */
-.overview,
-.overview * {
+.overview, .overview * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* ===================================================================
-   1) Основная секция Overview: фоновая картинка
-   =================================================================== */
 .overview {
   position: relative;
   width: 100%;
   background: url("../../assets/overview.png") center/cover no-repeat;
-  padding-top: 80px;
-  padding-bottom: 80px;
+  padding: 80px 0;
   overflow: hidden;
 }
 
-/* ===================================================================
-   2) Заголовок «Возможности программного продукта» слева сверху
-   =================================================================== */
 .overview__main-title {
   position: absolute;
   top: 0;
   left: 25.5%;
-  margin: 0;
   padding: 16px 0;
   font-size: 24px;
   font-weight: 700;
-  text-align: left;
   z-index: 2;
 }
 
@@ -39,25 +26,19 @@
   color: #5de0e6;
 }
 
-/* ===================================================================
-   3) Контейнер для левой (мишки) и правой (модули) колонок
-   =================================================================== */
 .overview__container {
+  position: relative;
+  z-index: 1;
   max-width: 1200px;
-  margin: 40px auto 0 auto;
+  height: calc(100vh - 160px);
+  margin: 40px auto 0;
   padding: 0 30px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   flex-wrap: wrap;
-  position: relative;
-  z-index: 1;
-  height: calc(100vh - 160px);
 }
 
-/* ===================================================================
-   4) Левая колонка: мишка с анимацией при появлении
-   =================================================================== */
 .overview__bear-wrapper {
   flex: 0 0 45%;
   max-width: 45%;
@@ -73,7 +54,6 @@
 }
 
 .overview__bear-image {
-  display: block;
   width: 100%;
   height: auto;
   transform-origin: bottom center;
@@ -94,56 +74,37 @@
   z-index: -1;
 }
 
-/* ===================================================================
-   5) Правая колонка: контейнер для двух блоков
-   =================================================================== */
 .overview__modules-wrapper {
   flex: 0 0 50%;
   max-width: 50%;
-  position: relative;
   display: flex;
   flex-direction: column;
   gap: 20px;
   height: 100%;
 }
 
-/* 5.1) Общие стили для карточек */
 .overview__modules-card {
-  position: relative;
-  border: 2px solid #0095ff;
-  border-radius: 20px;
-  padding: 40px;
-  color: #ffffff;
-  z-index: 1;
-  width: 100%;
-  max-width: 100%;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
   display: flex;
   flex-direction: column;
-}
-
-/* 5.2) Специфичные стили для карточки модулей */
-.overview__modules-card:not(.overview__team-card) {
-  background: #000000;
+  padding: 40px;
+  width: 100%;
+  border: 2px solid #0095ff;
+  border-radius: 20px;
+  background: #000;
   backdrop-filter: blur(10px);
-  position: relative;
+  color: #fff;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
   z-index: 2;
-  flex-grow: 0;
-  height: auto;
 }
 
-/* 5.3) Специфичные стили для карточки команды */
 .overview__team-card {
   background: transparent;
   backdrop-filter: none;
-  position: relative;
   margin-top: -330px;
   margin-left: 50px;
-  width: 100%;
   height: 500px;
-  display: flex;
-  justify-content: flex-end;
   padding: 30px;
+  justify-content: flex-end;
   z-index: 1;
 }
 
@@ -151,34 +112,29 @@
   font-size: clamp(28px, 4vw, 36px);
   font-weight: 700;
   margin-bottom: 20px;
-  font-family: "Montserrat", sans-serif;
+  font-family: Montserrat, sans-serif;
 }
 
-.overview__modules-list {
+.overview__modules-list,
+.overview__pro-list {
   list-style: none;
   padding: 0;
-  margin-bottom: 30px;
+  margin: 0 0 30px;
 }
 
-.overview__modules-list li {
+.overview__modules-list li,
+.overview__pro-list li {
+  display: flex;
+  align-items: center;
   font-size: clamp(16px, 2vw, 20px);
   line-height: 1.5;
   margin-bottom: 12px;
   padding-left: 24px;
-  position: relative;
 }
 
-/*.overview__modules-list li .overview__bullet {
-  position: absolute;
-  left: 0;
-  top: 0;
-  color: #00c6ff;
-  font-size: 16px;
-  line-height: 1.5;
-}*/
-
-.overview__pro-section {
-  margin-bottom: 30px;
+.overview__bullet {
+  width: 20px;
+  margin-right: 16px;
 }
 
 .overview__pro-title {
@@ -188,48 +144,11 @@
   margin-bottom: 15px;
 }
 
-.overview__pro-list {
-  list-style: none;
-  padding: 0;
-}
-
-.overview__pro-list li {
-  font-size: clamp(16px, 2vw, 20px);
-  line-height: 1.5;
-  margin-bottom: 10px;
-  padding-left: 24px;
-  position: relative;
-}
-
-/*.overview__pro-list li .overview__bullet {
-  position: absolute;
-  left: 0;
-  top: 0;
-  color: #00c6ff;
-  font-size: 16px;
-  line-height: 1.5;
-}*/
-
-.overview__bullet {
-  display: inline-block;
-  width: 20px;       /* подберите под свой макет */
-  height: auto;
-  margin-right: 16px;
-  vertical-align: middle;
-}
-
-/* 5.4) Стили для содержимого команды */
 .overview__team-content {
-  background: transparent;
-  backdrop-filter: none;
-  border-radius: 15px;
-  padding: 25px;
   width: 100%;
-  margin: 0 auto;
-  box-shadow: none;
+  padding: 25px;
 }
 
-/* 5.5) Стили для текста команды */
 .overview__modules-desc {
   font-size: clamp(16px, 2vw, 18px);
   line-height: 1.6;
@@ -237,182 +156,106 @@
   text-align: center;
 }
 
-/* ===================================================================
-   6) Адаптивность
-   =================================================================== */
-
 @media (max-width: 1200px) {
-  .overview {
-    padding-bottom: 0px; /* Уменьшен отступ снизу */
-  }
-
+  .overview { padding-bottom: 0; }
   .overview__container {
     flex-direction: column;
     height: auto;
-    padding-top: 80px;
-    padding-bottom: 0px;
+    padding: 80px 30px 0;
+  }
+  .overview__team-card {
+    position: relative;
+    margin: 30px 0 0;
+    transform: none;
   }
 }
 
-/* ≤ 992px */
 @media (max-width: 992px) {
   .overview {
-    padding-top: 40px; /* Уменьшен отступ сверху */
-    padding-bottom: 0px; /* Уменьшен отступ снизу */
+    padding: 40px 0 0;
   }
-
-  .overview__container {
-    flex-direction: column;
-    height: auto;
-    padding-top: 80px;
-    padding-bottom: 0px;
-  }
-
   .overview__bear-wrapper,
   .overview__modules-wrapper {
     flex: 0 0 100%;
     max-width: 100%;
-    text-align: center;
     height: auto;
-  }
-
-  .overview__modules-wrapper {
-    gap: 30px;
-  }
-
-  .overview__modules-card {
-    height: auto;
-  }
-
-  /* Отключение эффекта наложения на мобильных */
-  .overview__team-card {
-    position: relative;
-    right: auto;
-    bottom: auto;
-    width: 100%;
-    transform: none;
-    padding: 30px;
-    margin-top: 30px;
-    margin-left: 0;
-  }
-
-  .overview__team-content {
-    width: 100%;
-    margin-left: 0;
-  }
-
-  .overview__modules-desc {
     text-align: center;
   }
-
-  .overview__modules-list,
-  .overview__pro-list {
-    text-align: left;
-  }
-
-  .overview__modules-list li,
-  .overview__pro-list li {
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-  }
+  .overview__modules-wrapper { gap: 30px; }
 }
 
-/* ≤ 768px */
 @media (max-width: 768px) {
   .overview {
-    padding-top: 60px;
-    padding-bottom: 0px;
+    padding: 60px 0 0;
   }
-
   .overview__main-title {
     font-size: clamp(24px, 5vw, 32px);
     left: 20px;
   }
-
   .overview__bear-wrapper {
     width: 80%;
     margin: 0 auto 40px;
   }
-
   .overview__modules-card {
     padding: 30px;
   }
-
   .overview__modules-title {
     font-size: clamp(24px, 4vw, 32px);
   }
-
   .overview__modules-list li,
   .overview__pro-list li {
     font-size: clamp(14px, 2.5vw, 18px);
   }
-
   .overview__modules-desc {
     font-size: clamp(14px, 2.5vw, 16px);
   }
 
-  .overview__modules-list,
-  .overview__pro-list {
-    text-align: left;
-  }
-
-  .overview__modules-list li,
-  .overview__pro-list li {
+  .overview__team-card {
     display: flex;
+    justify-content: center;
     align-items: center;
-    justify-content: flex-start;
+  }
+  .overview__team-content {
+    text-align: center;
   }
 }
 
-/* ≤ 480px */
 @media (max-width: 480px) {
   .overview {
-    padding-top: 40px;
-    padding-bottom: 40px;
+    padding: 40px 0;
   }
-
   .overview__main-title {
     font-size: clamp(20px, 6vw, 28px);
     left: 16px;
   }
-
   .overview__bear-wrapper {
     width: 100%;
   }
-
   .overview__bear-image {
     max-width: 80%;
     margin: 0 auto;
   }
-
   .overview__modules-card {
     padding: 20px;
   }
-
   .overview__modules-title {
     font-size: clamp(20px, 5vw, 28px);
   }
-
   .overview__modules-list li,
   .overview__pro-list li {
     font-size: clamp(14px, 3vw, 16px);
     padding-left: 20px;
   }
-
   .overview__modules-desc {
     font-size: clamp(14px, 3vw, 16px);
   }
 
-  .overview__modules-list,
-  .overview__pro-list {
-    text-align: left;
-  }
-
-  .overview__modules-list li,
-  .overview__pro-list li {
+  .overview__team-card {
     display: flex;
+    justify-content: center;
     align-items: center;
-    justify-content: flex-start;
+  }
+  .overview__team-content {
+    text-align: center;
   }
 }

@@ -8,8 +8,9 @@ const Navbar = () => {
 
   useEffect(() => {
     const onScroll = () => {
-      setScrolled(window.scrollY > 10);
-      if (window.scrollY > 10 && isMobileMenuOpen) {
+      const isScrolled = window.scrollY > 10;
+      setScrolled(isScrolled);
+      if (isScrolled && isMobileMenuOpen) {
         setIsMobileMenuOpen(false);
       }
     };
@@ -18,36 +19,29 @@ const Navbar = () => {
     return () => window.removeEventListener("scroll", onScroll);
   }, [isMobileMenuOpen]);
 
-  // Закрытие меню при клике на пункт
-  const closeMobileMenu = () => {
-    setIsMobileMenuOpen(false);
-  };
+  const closeMobileMenu = () => setIsMobileMenuOpen(false);
+
+  const menuItems = [
+    { name: "Главная", href: "#hero" },
+    { name: "Обзор", href: "#overview" },
+    { name: "Модули", href: "#convenience" },
+    { name: "Возможности", href: "#comfort" },
+    { name: "О нас", href: "#about" },
+    { name: "Контакты", href: "#contacts" }
+  ];
 
   return (
     <header className={`navbar ${scrolled ? "navbar--scrolled" : ""}`}>
       <div className="navbar__container">
-        {/* Логотип */}
         <a href="#hero" className="navbar__logo" aria-label="Главная" onClick={closeMobileMenu}>
           <img src={logo} alt="Логотип компании" />
         </a>
 
-        {/* Основное меню */}
         <nav className={`navbar__nav ${isMobileMenuOpen ? "active" : ""}`}>
           <ul className="navbar__list">
-            {[
-              { name: "Главная", href: "#hero" },
-              { name: "Обзор", href: "#overview" },
-              { name: "Модули", href: "#convenience" },
-              { name: "Возможности", href: "#comfort" },
-              { name: "О нас", href: "#about" },
-              { name: "Контакты", href: "#contacts" }
-            ].map((item) => (
+            {menuItems.map(item => (
               <li key={item.name} className="navbar__item">
-                <a
-                  href={item.href}
-                  onClick={closeMobileMenu}
-                  aria-label={item.name}
-                >
+                <a href={item.href} onClick={closeMobileMenu} aria-label={item.name}>
                   {item.name}
                 </a>
               </li>
@@ -55,23 +49,21 @@ const Navbar = () => {
           </ul>
         </nav>
 
-        {/* Кнопка входа */}
         <div className="navbar__actions">
           <button className="navbar__button" aria-label="Личный кабинет">
             Личный кабинет
           </button>
         </div>
 
-        {/* Гамбургер меню */}
         <button
           className={`navbar__hamburger ${isMobileMenuOpen ? "active" : ""}`}
-          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+          onClick={() => setIsMobileMenuOpen(prev => !prev)}
           aria-label={isMobileMenuOpen ? "Закрыть меню" : "Открыть меню"}
           aria-expanded={isMobileMenuOpen}
         >
-          <span aria-hidden="true"></span>
-          <span aria-hidden="true"></span>
-          <span aria-hidden="true"></span>
+          <span aria-hidden="true" />
+          <span aria-hidden="true" />
+          <span aria-hidden="true" />
         </button>
       </div>
     </header>

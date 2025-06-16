@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800&display=swap');
 
-/* Базовые сбросы и настройки */
 :root {
   --primary-color: #5de0e6;
   --secondary-color: #004aad;
@@ -13,7 +12,6 @@
   --transition: all 0.3s ease;
 }
 
-/* Современный reset (более аккуратный, чем * { margin: 0 }) */
 body, h1, h2, h3, h4, h5, h6,
 p, blockquote, pre, dl, dd, ol, ul,
 figure, hr, fieldset, legend {
@@ -22,12 +20,10 @@ figure, hr, fieldset, legend {
   font-family: 'Montserrat', sans-serif;
 }
 
-/* Бокс-модель для всех элементов */
 *, *::before, *::after {
   box-sizing: border-box;
 }
 
-/* Основные стили документа */
 html {
   scroll-behavior: smooth;
   scroll-padding-top: calc(var(--navbar-height) + 20px);
@@ -45,7 +41,6 @@ body {
   overflow-x: hidden;
 }
 
-/* Типография */
 h1, h2, h3, h4, h5, h6 {
   font-weight: bold;
   line-height: 1.2;
@@ -75,15 +70,13 @@ a:hover {
   color: color-mix(in srgb, var(--primary-color), white 20%);
 }
 
-/* Изображения и медиа */
 img, video {
   max-width: 100%;
   height: auto;
   vertical-align: middle;
-  font-style: italic; /* Fallback для alt текста */
+  font-style: italic;
 }
 
-/* Формы */
 button, input, textarea, select {
   font: inherit;
   color: inherit;
@@ -95,7 +88,6 @@ button {
   border: none;
 }
 
-/* Утилитарные классы */
 .visually-hidden {
   position: absolute;
   width: 1px;
@@ -115,7 +107,6 @@ button {
   padding: 0 20px;
 }
 
-/* Анимации */
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(20px); }
   to { opacity: 1; transform: translateY(0); }
@@ -125,12 +116,10 @@ button {
   animation: fadeIn 0.6s ease forwards;
 }
 
-/* Медиа-запросы для специфичных случаев */
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
   }
-
   *, *::before, *::after {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;

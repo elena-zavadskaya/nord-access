@@ -12,7 +12,7 @@ const SyncSection = () => {
       <div className="container sync__inner">
         <div className="sync__content">
           <h3 className="sync__title">Синхронизация</h3>
-          <ul className="overview__list">
+          <ul className="sync__list">
             <li className="overview__item">
               <img src={arrowIcon} alt="arrow icon" className="overview__icon" />
               <span>API</span>
@@ -33,7 +33,6 @@ const SyncSection = () => {
             <img src={googlePlayBadge} alt="Google Play Badge" />
           </a>
         </div>
-
         <div className="sync__images">
           <img src={laptopImg} alt="Tablet" className="sync__tablet" />
           <img src={phoneImg} alt="Phone" className="sync__phone" />

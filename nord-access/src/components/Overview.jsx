@@ -14,11 +14,8 @@ const Overview = () => {
     const handleScroll = () => {
       setScrollY(window.scrollY);
       setIsScrolling(true);
-
       clearTimeout(scrollTimeout);
-      scrollTimeout = setTimeout(() => {
-        setIsScrolling(false);
-      }, 100);
+      scrollTimeout = setTimeout(() => setIsScrolling(false), 100);
     };
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
@@ -26,8 +23,8 @@ const Overview = () => {
 
   useEffect(() => {
     const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
+      entries => {
+        entries.forEach(entry => {
           if (entry.isIntersecting) {
             setIsBearVisible(true);
             observer.disconnect();
@@ -36,80 +33,55 @@ const Overview = () => {
       },
       { threshold: 0.5 }
     );
-    if (bearRef.current) {
-      observer.observe(bearRef.current);
-    }
+    if (bearRef.current) observer.observe(bearRef.current);
     return () => observer.disconnect();
   }, []);
+
+  const bearTransform = isScrolling
+    ? `translateY(${Math.min(scrollY * 0.05, 20)}px) rotate(${Math.sin(scrollY * 0.01) * 5}deg)`
+    : "translateY(0) rotate(0)";
 
   return (
     <section id="overview" className="overview">
       <h2 className="overview__main-title">Возможности программного продукта</h2>
-
       <div className="overview__container">
-        {/* Левая колонка: мишка */}
         <div
-          className={
-            isBearVisible
-              ? "overview__bear-wrapper overview__bear-visible"
-              : "overview__bear-wrapper"
-          }
           ref={bearRef}
-          style={{
-            transform: isScrolling
-              ? `translateY(${Math.min(scrollY * 0.05, 20)}px) rotate(${Math.sin(
-                  scrollY * 0.01
-                ) * 5}deg)`
-              : "translateY(0px) rotate(0deg)",
-          }}
+          className={`overview__bear-wrapper${isBearVisible ? " overview__bear-visible" : ""}`}
+          style={{ transform: bearTransform }}
         >
           <img src={bearImage} alt="Мишка" className="overview__bear-image" />
-          <div className="overview__bear-shadow"></div>
+          <div className="overview__bear-shadow" />
         </div>
-
-        {/* Правая колонка: два блока с одинаковой стилизацией */}
         <div className="overview__modules-wrapper">
-          {/* Блок 1: Модули ОНЛАЙН */}
           <div className="overview__modules-card">
             <h3 className="overview__modules-title">
               Модули <span className="overview__highlight">ОНЛАЙН</span>
             </h3>
-
             <ul className="overview__modules-list">
-              <li>
-                <img src={arrowIcon} alt="" className="overview__bullet"/>
-                управление закупками
-              </li>
-              <li>
-                <img src={arrowIcon} alt="" className="overview__bullet"/>
-                управление уведомлениями
-              </li>
-              <li>
-                <img src={arrowIcon} alt="" className="overview__bullet"/>
-                управление финансами
-              </li>
-              <li>
-                <img src={arrowIcon} alt="" className="overview__bullet"/>
-                управление логистикой
-              </li>
-              <li>
-                <img src={arrowIcon} alt="" className="overview__bullet"/>
-                справочники
-              </li>
+              {[
+                "управление закупками",
+                "управление уведомлениями",
+                "управление финансами",
+                "управление логистикой",
+                "справочники"
+              ].map(text => (
+                <li key={text}>
+                  <img src={arrowIcon} alt="" className="overview__bullet" />
+                  {text}
+                </li>
+              ))}
             </ul>
-
             <div className="overview__pro-section">
               <h4 className="overview__pro-title">Pro версия</h4>
               <ul className="overview__pro-list">
                 <li>
-                  <img src={arrowIcon} alt="" className="overview__bullet"/>
+                  <img src={arrowIcon} alt="" className="overview__bullet" />
                   Аукцион
                 </li>
               </ul>
             </div>
           </div>
-
-          {/* Блок 2: Описание команды (новая карточка) */}
           <div className="overview__modules-card overview__team-card">
             <div className="overview__team-content">
               <p className="overview__modules-desc">

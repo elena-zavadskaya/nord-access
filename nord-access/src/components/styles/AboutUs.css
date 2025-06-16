@@ -1,73 +1,70 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800&display=swap');
 
+.about, .about * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 .about {
   background-color: #020613;
   padding: 80px 0;
   font-family: 'Montserrat', sans-serif;
-  color: #ffffff;
+  color: #fff;
+  text-align: center;
 }
 
 .about__inner {
   max-width: 800px;
   margin: 0 auto;
-  text-align: center;
-  position: relative;
 }
 
 .about__title {
-  display: inline-block;
-  border: 3px solid #5de0e6;
-  border-radius: 22px;
-  padding: 36px 20px;
-  color: #ffffff;
-  font-size: clamp(24px, 5vw, 45px);
-  font-weight: 200;
-  margin: 0 auto;
-  text-align: center;
-  background-color: transparent;
   width: 100%;
   max-width: 800px;
+  font-size: clamp(24px, 5vw, 45px);
+  font-weight: 200;
+  color: #fff;
+  background: transparent;
+  border: 3px solid #5de0e6;
+  border-radius: 22px;
+  padding: 36px 20px min(15vw, 120px);
   box-sizing: border-box;
-  /* Добавляем адаптивный нижний отступ */
-  padding-bottom: min(15vw, 120px);
+  margin: 0 auto;
 }
 
 .about__text-wrapper {
-  position: relative;
-  margin: -100px auto 16px;
   max-width: 600px;
+  margin: -100px auto 16px;
+  padding: 20px;
+  background-color: #020613;
   border: 2px solid #5de0e6;
   border-radius: 37px;
-  padding: 20px;
   text-align: justify;
+  position: relative;
   z-index: 2;
-  background-color: #020613;
 }
 
 .about__text {
   font-size: 16px;
-  color: #ffffff;
   line-height: 1.6;
-  font-weight: 400;
-  margin: 0 0 16px 0;
+  color: #fff;
+  margin-bottom: 16px;
 }
 
 .about__text:last-of-type {
   margin-bottom: 0;
 }
 
-/* Медиа-запросы для адаптации */
 @media (max-width: 768px) {
   .about {
     padding: 60px 0;
   }
-
   .about__title {
     padding-bottom: 100px;
   }
-
   .about__text-wrapper {
-    margin-top: -80px;
+    margin: -80px auto 16px;
     max-width: 90%;
   }
 }
@@ -76,19 +73,21 @@
   .about {
     padding: 40px 0;
   }
-
   .about__title {
-    padding: 25px 15px 80px;
+    width: calc(100% - 32px);
+    max-width: none;
+    margin: 0 auto;
+    padding: 25px 16px 80px;
     border-width: 2px;
   }
-
   .about__text-wrapper {
-    margin-top: -60px;
+    width: 80%;
+    max-width: none;
+    margin: -60px auto 16px;
     padding: 15px;
     border-width: 1.5px;
     border-radius: 25px;
   }
-
   .about__text {
     font-size: 14px;
   }
@@ -98,8 +97,8 @@
   .about__title {
     padding-bottom: 70px;
   }
-
   .about__text-wrapper {
-    margin-top: -50px;
+    margin: -50px auto 16px;
+    width: calc(100% - 24px);
   }
 }

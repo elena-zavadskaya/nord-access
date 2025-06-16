@@ -1,6 +1,5 @@
-// src/App.jsx
 import React from 'react';
-import './App.css'; // глобальные стили (reset, шрифты и др.)
+import './App.css';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import FeaturesSection from "./components/FeaturesSection";
@@ -26,4 +25,3 @@ function App() {
 }
 
 export default App;
-

@@ -15,36 +15,31 @@ const FeatureBlock = ({ title, imageSrc, items, reverse, isList, index }) => {
   return (
     <div className={`feature-block ${reverse ? "feature-block--reverse" : ""}`}>
       <h2 className="feature-title">{title}</h2>
-
       <div className="feature-content">
         <div className="feature-image-wrapper">
           <img src={imageSrc} alt={title} className="feature-image" />
         </div>
-
         <div className="feature-text-list">
           {isList ? (
-              <ul>
-                {isAnalyticsBlock
-                    ? mainItems.map((item, idx) => <li key={idx}>{item}</li>)
-                    : items.map((item, idx) => <li key={idx}>{item}</li>)}
-              </ul>
+            <ul>
+              {isAnalyticsBlock
+                ? mainItems.map((item, idx) => <li key={idx}>{item}</li>)
+                : items.map((item, idx) => <li key={idx}>{item}</li>)}
+            </ul>
           ) : index === 0 ? (
-              <>
-                <p className="feature-text-paragraph left-align">{items.split("<br><br>")[0]}</p>
-                <p className="feature-text-paragraph">{items.split("<br><br>")[1]}</p>
-              </>
+            <>
+              <p className="feature-text-paragraph left-align">{items.split("<br><br>")[0]}</p>
+              <p className="feature-text-paragraph">{items.split("<br><br>")[1]}</p>
+            </>
           ) : (
-              <p className="feature-text-paragraph">{items}</p>
+            <p className="feature-text-paragraph">{items}</p>
           )}
         </div>
       </div>
-
       {isAnalyticsBlock && fullWidthItem && (
-          <div className="feature-full-width-item">
-            <div className="feature-full-width-content">
-              {fullWidthItem}
-            </div>
-          </div>
+        <div className="feature-full-width-item">
+          <div className="feature-full-width-content">{fullWidthItem}</div>
+        </div>
       )}
     </div>
   );
@@ -53,10 +48,7 @@ const FeatureBlock = ({ title, imageSrc, items, reverse, isList, index }) => {
 FeatureBlock.propTypes = {
   title: PropTypes.string.isRequired,
   imageSrc: PropTypes.string.isRequired,
-  items: PropTypes.oneOfType([
-    PropTypes.arrayOf(PropTypes.string),
-    PropTypes.string,
-  ]).isRequired,
+  items: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.string), PropTypes.string]).isRequired,
   reverse: PropTypes.bool,
   isList: PropTypes.bool,
   index: PropTypes.number,
@@ -64,8 +56,8 @@ FeatureBlock.propTypes = {
 
 FeatureBlock.defaultProps = {
   reverse: false,
-  isList: true,
-  index: -1,
+  isList: false,
+  index: 0,
 };
 
 export default FeatureBlock;

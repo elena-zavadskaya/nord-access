@@ -1,21 +1,16 @@
-/* src/App.css */
-
-/* Чтобы фон занимал всю высоту экрана, устанавливаем для <html> и <body> 100% */
 html, body {
   margin: 0;
   padding: 0;
   height: 100%;
 }
 
-/* Применяем фон именно к .App */
 .App {
-  min-height: 100vh; /* на всякий случай, чтобы контейнер занимал всю высоту */
-  /*background-image: url('./assets/background-full.png');*/
+  min-height: 100vh;
   background-repeat: no-repeat;
-  background-position: center top; /* можно центрировать по горизонтали, а по вертикали «top» или «center» на ваше усмотрение */
-  background-size: cover;           /* масштабируем под весь экран */
-  background-attachment: fixed;      /* закреплённый фон (не скроллится вместе с контентом) */
+  background-position: center top;
+  background-size: cover;
+  background-attachment: fixed;
   display: flex;
   flex-direction: column;
-  color: #fff;                       /* если фон тёмный, чтобы по умолчанию текст был белым */
+  color: #fff;
 }
