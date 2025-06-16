@@ -47,14 +47,15 @@ const FeaturesSection = () => {
       <div className="features__inner">
         <div id="convenience">
           {blockData.map((block, index) => (
-              <FeatureBlock
-                  key={index}
-                  title={block.title}
-                  imageSrc={block.imageSrc}
-                  items={block.items}
-                  reverse={block.reverse}
-                  isList={block.isList}
-              />
+            <FeatureBlock
+              key={index}
+              index={index} // Добавлена передача индекса
+              title={block.title}
+              imageSrc={block.imageSrc}
+              items={block.items}
+              reverse={block.reverse}
+              isList={block.isList}
+            />
           ))}
 
           <div id="comfort" className="features__comfort">

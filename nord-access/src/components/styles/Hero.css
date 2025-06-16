@@ -226,23 +226,23 @@
 
 @media (max-width: 768px) {
   .hero__content {
-    padding-bottom: 60px; /* диз. число — подберите под вашу высоту бейджа + отступ */
+    padding-bottom: 60px;
   }
   .hero__text {
     padding: 80px 20px 30px;
   }
   .hero__app-download {
     flex-direction: column;
-    align-items: center;      /* по центру вместо flex-start */
-    text-align: center;       /* подписи тоже по центру */
+    align-items: center;
+    text-align: center;
   }
   .hero__download-text {
-    width: 100%;              /* чтобы text-align:center сработал */
+    width: 100%;
   }
   .hero__badge-wrapper {
     position: static;
     transform: none;
-    margin: 20px auto 0;      /* сверху 20px, по бокам auto, снизу 0 */
+    margin: 20px auto 0;
   }
   .hero__badge-image {
     height: 50px;
@@ -271,20 +271,19 @@
 
 @media (max-width: 480px) {
   .hero__content {
-    padding-bottom: 40px; /* чуть меньше на самых маленьких экранах */
+    padding-bottom: 40px;
   }
   .hero {
-    min-height: 90vh;
+    min-height: 60vh;
   }
   .hero__text {
-    padding: 80px 20px 30px;
     max-width: calc(100% - 40px);
   }
   .hero__badge-image {
     height: 40px;
   }
   .hero__badge-wrapper {
-    margin: 16px auto 0;      /* чуть меньше верхнего отступа */
+    margin: 16px auto 0;
   }
   .hero__content .hero__scroll-button {
     bottom: 16px;

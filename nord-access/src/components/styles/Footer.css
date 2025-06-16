@@ -15,27 +15,57 @@
 
 .footer__company-info {
   margin-bottom: 16px;
-  line-height: 0.7;
+  line-height: 1.5;
 }
 
 .footer__contacts {
   margin-bottom: 20px;
-  line-height: 0.7;
+  line-height: 1.5;
 }
 
 .footer__links {
   width: 100%;
-  text-align: center;
+  margin-top: 20px;
 }
 
-.footer__links a {
-  display: inline-block;
+.footer__links-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  gap: 20px;
+}
+
+.footer__links-row a,
+.footer__copyright {
+  flex: 1;
+  text-align: center;
   color: #ffffff;
   text-decoration: none;
-  margin: 0 12px;
   font-size: 11px;
+  white-space: nowrap;
 }
 
-.footer__links a:hover {
+.footer__links-row a:hover {
   text-decoration: underline;
+}
+
+.footer__copyright {
+  opacity: 0.8;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+  .footer__links-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .footer__links-row a,
+  .footer__copyright {
+    width: 100%;
+    text-align: left;
+    white-space: normal;
+  }
 }

@@ -2,29 +2,50 @@ import React from "react";
 import PropTypes from "prop-types";
 import "./styles/FeatureBlock.css";
 
-const FeatureBlock = ({ title, imageSrc, items, reverse, isList }) => {
+const FeatureBlock = ({ title, imageSrc, items, reverse, isList, index }) => {
+  const isAnalyticsBlock = index === 1 && isList;
+  let mainItems = items;
+  let fullWidthItem = null;
+
+  if (isAnalyticsBlock && items.length > 0) {
+    mainItems = items.slice(0, -1);
+    fullWidthItem = items[items.length - 1];
+  }
+
   return (
     <div className={`feature-block ${reverse ? "feature-block--reverse" : ""}`}>
       <h2 className="feature-title">{title}</h2>
+
       <div className="feature-content">
-        {/* Если reverse=false → картинка слева, текст справа.
-            Если reverse=true  → картинка справа, текст слева. */}
         <div className="feature-image-wrapper">
           <img src={imageSrc} alt={title} className="feature-image" />
         </div>
 
         <div className="feature-text-list">
           {isList ? (
-            <ul>
-              {items.map((item, idx) => (
-                <li key={idx}>{item}</li>
-              ))}
-            </ul>
+              <ul>
+                {isAnalyticsBlock
+                    ? mainItems.map((item, idx) => <li key={idx}>{item}</li>)
+                    : items.map((item, idx) => <li key={idx}>{item}</li>)}
+              </ul>
+          ) : index === 0 ? (
+              <>
+                <p className="feature-text-paragraph left-align">{items.split("<br><br>")[0]}</p>
+                <p className="feature-text-paragraph">{items.split("<br><br>")[1]}</p>
+              </>
           ) : (
-            <div className="feature-text-paragraphs" dangerouslySetInnerHTML={{ __html: items }} />
+              <p className="feature-text-paragraph">{items}</p>
           )}
         </div>
       </div>
+
+      {isAnalyticsBlock && fullWidthItem && (
+          <div className="feature-full-width-item">
+            <div className="feature-full-width-content">
+              {fullWidthItem}
+            </div>
+          </div>
+      )}
     </div>
   );
 };
@@ -38,11 +59,13 @@ FeatureBlock.propTypes = {
   ]).isRequired,
   reverse: PropTypes.bool,
   isList: PropTypes.bool,
+  index: PropTypes.number,
 };
 
 FeatureBlock.defaultProps = {
   reverse: false,
   isList: true,
+  index: -1,
 };
 
 export default FeatureBlock;
